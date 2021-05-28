@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    
+    <title>futaba sakura mwehehehehe</title>
+    <!-- The style.css file allows you to change the look of your web pages.
+         If you include the next line in all your web pages, they will all share the same look.
+         This makes it easier to make new pages for your site. -->
+    <link href="/style.css" rel="stylesheet" type="text/css" >
+    <script src="https://kit.fontawesome.com/75964e879a.js" crossorigin="anonymous"></script>
+
+    
+  </head>
+  <body>
+    <div id="desktop">
+    
+      <div class="apps">
+      <img src="/icons/trashfull.png"> 
+      Recycle Bin
+      </div>
+      
+      <div class="apps">
+      <img src="/icons/firefox.png"> 
+      Firefox
+      </div>
+      
+      <div class="apps">
+      <img src="/icons/git.png"> 
+      Git Bash
+      </div>
+      
+      <div class="apps">
+      <img src="/icons/visual.png"> 
+      Visual Studio Code
+      </div>
+      
+      <div class="apps">
+      <img src="/icons/discord.png"> 
+      Discord
+      </div>
+      
+      <div class="apps">
+      <img src="/icons/p5s_logo.png"> 
+      Persona 5 Strikers
+      </div>
+      
+      
+    </div>
+
+    <div id="taskbar"> 
+    <div class="taskbar-left">
+    <img src="/icons/windows.png">
+    <input type="text" id="searchbar" name="searchbar">
+    </div>
+    
+    <div class="taskbar-right">
+    
+    <div class="more-icons">
+    <button onclick="showIcons()" class="dropbtn"> <i class="fas fa-chevron-up"></i> </button>
+    <div id="myDropup" class="dropup-content">
+    <div class="dropup-content-flex">
+    <img src="/icons/firefox.png"> 
+    <img src="/icons/firefox.png"> 
+    <img src="/icons/firefox.png"> 
+    <img src="/icons/firefox.png"> 
+    <img src="/icons/firefox.png"> 
+    <img src="/icons/firefox.png"> 
+    </div>
+  </div>
+  <i class="fas fa-battery-three-quarters"></i>
+    </div>
+        <div class="more-icons">
+    <button onclick="showIcons()" class="dropbtn"> <i class="fas fa-wifi"></i> </button>
+    <div id="myDropup" class="dropup-content wifi">
+    <div class="dropup-content-flex">
+    <img src="/icons/firefox.png"> 
+    <img src="/icons/firefox.png"> 
+    <img src="/icons/firefox.png"> 
+    <img src="/icons/firefox.png"> 
+    <img src="/icons/firefox.png"> 
+    <img src="/icons/firefox.png"> 
+    </div>
+  </div>
+      <div class="time" >
+        <p id="currentTime"></p>
+        <p id="currentDate"></p>
+      </div>
+      
+    </div>
+    
+    </div>
+    
+    <script>
+      function display_ct6() {
+        var x = new Date()
+        var ampm = x.getHours( ) >= 12 ? ' PM' : ' AM';
+            hours = x.getHours( ) % 12;
+            hours = hours ? hours : 12;
+            mins = ('0'+x.getMinutes()).slice(-2)
+        var x1=hours + ":" +  mins + ampm;
+        document.getElementById('currentTime').innerHTML = x1;
+        display_c6();
+         }
+      function display_c6(){
+        var refresh=1000; // Refresh rate in milli seconds
+        mytime=setTimeout('display_ct6()',refresh)
+        }
+        display_c6()
+    </script>
+    
+    <script> 
+      var today = new Date();
+      var date =(today.getMonth()+1)+'/'+today.getDate()+'/'+today.getFullYear();
+      document.getElementById("currentDate").innerHTML = date;
+      
+    </script>
+    <script>
+      /* When the user clicks on the button, 
+      toggle between hiding and showing the dropdown content */
+      function showIcons() {
+        document.getElementById("myDropup").classList.toggle("show");
+      }
+      
+      // Close the dropdown if the user clicks outside of it
+      window.onclick = function(event) {
+        if (!event.target.matches('.dropbtn')) {
+          var dropdowns = document.getElementsByClassName("dropup-content");
+          var i;
+          for (i = 0; i < dropdowns.length; i++) {
+            var openDropdown = dropdowns[i];
+            if (openDropdown.classList.contains('show')) {
+              openDropdown.classList.remove('show');
+            }
+          }
+        }
+      }
+    </script>
+  </body>
+</html>

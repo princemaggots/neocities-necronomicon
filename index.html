@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ENTER </title>
+    <!-- The style.css file allows you to change the look of your web pages.
+         If you include the next line in all your web pages, they will all share the same look.
+         This makes it easier to make new pages for your site. -->
+    <link href="/style.css" rel="stylesheet" type="text/css" media="all">
+    <script>
+      var i = 0;
+      var txt = 'alibaba';
+      var io = 0;
+      var pass = '       ***********';
+      var speed = 95;
+      
+      
+      
+      function firstFunction(_callback){
+          if (i < txt.length) {
+          	document.getElementById("username").innerHTML += txt.charAt(i);
+          	i++;
+          	// setTimeout(firstFunction, speed);
+        	}
+          _callback();    
+      	}
+      
+      function secondFunction(){
+          // call first function and pass in a callback function which
+          // first function runs when it has completed
+          firstFunction(function() {
+          setTimeout(secondFunction, speed);
+          if (io < pass.length) {
+          	document.getElementById("password").innerHTML += pass.charAt(io);
+          	io++;
+          	// setTimeout(typeWriter2, speed);
+        		}     
+          });  
+      }
+
+    function logOnSound(){ 
+        var audio = document.getElementById("logon");
+        audio.play();
+      };
+
+    </script>
+    
+  </head>
+  <body onload="secondFunction()">
+    <div id="start">
+    
+      <div class="userbox">
+      <label> username </label>
+      <div id="username">
+      </div>
+      </div>
+
+      <div class="userbox">
+      <label> password </label>
+      <div id="password">
+      </div>
+      </div>
+      
+      <div class="login">
+      <a href="/desk.html"> 
+      <button>Log In</button> 
+      </a> 
+      <audio id="logon" src="https://www.dropbox.com/s/io18jwu3fkuxs7o/Windows%20XP%20Logon%20Sound.mp3?dl=0"> </audio>
+      </div>
+      
+  </div>
+  </body>
+</html>

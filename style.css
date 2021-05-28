@@ -1,0 +1,383 @@
+/* CSS is how you can add style to your website, such as colors, fonts, and positioning of your
+   HTML content. To learn how to do something, just try searching Google for questions like
+   "how to change link color." */
+
+/* ---- COLORS ---- */
+:root {
+  
+  /* -- basics -- */
+  --backgroundColor: #000;
+  --fontSize: 13px;
+  --h1FontSize: 16px;
+  
+  /* -- theme -- */
+  --themeColor: #00ff1e;
+  --themeColor75: green;
+  --themeColor50: green;
+  --themeColor25: green;
+  
+  /* -- glenthemes player -- */
+   --Circle-Size:38px;
+  --Progress-Border-Size:2px;
+  --Progress-Empty:#eee;
+  --Progress-Fill:#FF8AD8;
+  --Player-Background:#fbfbfb;
+  --Play-Pause-Buttons-Size:14px;
+  --Play-Pause-Buttons-Color:#FF8AD8;
+  --Player-Text-Margin:16px;
+ 
+  --Song-Name-Font-Size:10px;
+  --Song-Name-Color:#FF8AD8;
+ 
+  --Artist-Name-Font-Size:11px;
+  --Artist-Name-Color:#FFDEF4;
+}
+
+/* ---- SCROLLBAR ---- */
+
+::-webkit-scrollbar {
+  width: 16px;
+  height: 10px;
+}
+::-webkit-scrollbar-thumb {
+  background-color: #fff;
+  background-image: url(https://i.imgur.com/Qtm9Z60.png);
+  border-top: 1px solid #bdbdbd;
+  border-left: 1px solid #bdbdbd;
+  border-right: 1px solid black;
+  border-bottom: 1px solid black;
+}
+::-webkit-scrollbar-track {
+  background-color: #fff;
+  background-image: url(https://i.imgur.com/IGXGYKz.png);
+}
+::-webkit-scrollbar-button:vertical:increment {
+  background-image: url(https://i.imgur.com/WhC8iy3.png);
+  width: 14px;
+  height: 16px;
+  border-top: 1px solid #bdbdbd;
+  border-left: 1px solid #bdbdbd;
+  border-right: 1px solid black;
+  border-bottom: 1px solid black;
+}
+::-webkit-scrollbar-button:vertical:decrement {
+  background-image: url(https://i.imgur.com/fQ18mrR.png);
+  border-top: 1px solid #bdbdbd;
+  border-left: 1px solid #bdbdbd;
+  border-right: 1px solid black;
+  border-bottom: 1px solid black;
+  width: 14px;
+  height: 16px;
+}
+
+/* ---- BASIC SHIZ ---- */
+
+body {
+  background-color: var(--backgroundColor);
+  color: #f2f2f2;
+  font-family: Consolas, monospace;
+  font-size: var(--fontSize);
+}
+
+h1 {
+  font-size: var(--h1FontSize);
+  font-weight: 400;
+  color: black;
+}
+
+a {
+  color: var(--themeColor);
+  text-decoration: none;
+}
+
+/* ---- START ---- */
+
+#start {
+  border: 1px solid var(--themeColor);
+  width: 50vw;
+  height: 20vw;
+  display: flex;
+  flex-flow: column wrap;
+  padding: 10px;
+  margin: 25vh auto;
+  justify-content: space-between;
+  }
+
+#start label {
+  font-size: 16px;
+}
+
+.userbox {
+  width: 50vw;
+  margin: auto;
+  display: flex;
+  justify-content: space-between;
+  flex-flow: column wrap;
+}
+
+#username {
+  border: 1px solid var(--themeColor);
+  width: 48vw;
+  height: 2vw;
+  padding: 15px;
+}
+
+
+#password {
+  border: 1px solid var(--themeColor);
+  width: 48vw;
+  height: 2vw;
+  padding: 15px;
+}
+
+.login {
+  width: 50vw;
+  display: flex;
+  justify-content: center;
+}
+
+.login button {
+  background: var(--backgroundColor);
+  border: 1px solid var(--themeColor);
+  width: 10vw;
+  height: 4vw;
+  padding: 15px;
+  color: var(--themeColor);
+  font-family: Consolas, monospace;
+}
+
+
+
+
+/* ---- DESKTOP ---- */ 
+
+#desktop {
+  height: 94vh;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  padding: 5px 10px;
+}
+
+.apps {
+  width: 3.5vw;
+  min-height: 3.5vw;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: nowrap;
+  margin: 0.5vw;
+  cursor: pointer;
+}
+
+.apps img {
+  width: 100%;
+  height: auto;
+}
+
+.apps p {
+  text-align: center;
+}
+
+#taskbar {
+  width: 99.5%;
+  height: 3vw;
+  margin-left: -0.25%;
+  border: 1px solid var(--themeColor);
+  display: flex;
+  flex-wrap: nowrap;
+  justify-content: space-between;
+  position:fixed;
+  bottom:0;
+}
+
+.taskbar-left {
+  display: flex;
+  flex-wrap: nowrap;
+  justify-content: flex-start;
+  max-width: 65vw;
+}
+
+.taskbar-right {
+  display: flex;
+  flex-wrap: nowrap;
+  justify-content: flex-end;
+  max-width: 25vw;
+}
+
+#searchbar {
+  padding: 6px;
+  border: 1px solid var(--themeColor);
+  width: 21vw;
+  margin: 0 0.5vw;
+  background: var(--backgroundColor);
+  color: var(--themeColor);
+}
+
+.icon {
+  width: 0.5vw;
+}
+
+.icon:hover {
+  color: var(--themeColor25);
+}
+
+.iconactive {
+  width: 0.5vw;
+  border-bottom: 2px solid var(--themeColor);
+  color: var(--themeColor50);
+}
+
+.iconactive:hover {
+  color: var(--themeColor75);
+}
+
+.time {
+  width: 5vw;
+  color: #f2f2f2;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: nowrap;
+  margin: 0 0.5vw;
+  justify-content: space-evenly;
+}
+
+.time p {
+  margin: 0;
+}
+
+.dropbtn {
+  background-color: transparent;
+  color: white;
+  padding: 0.9vw;
+  font-size: 12px;
+  border: none;
+  cursor: pointer;
+}
+
+.dropbtn:hover, .dropbtn:focus {
+  background-color: #f2f2f226;
+}
+
+.more-icons {
+  position: relative;
+  display: inline-block;
+}
+
+.dropup-content {
+  display: none;
+  position: absolute;
+  background-color: var(--themeColor);
+  width: 8.5vw;
+  overflow: auto;
+  z-index: 1;
+  bottom: 3vw;
+}
+
+.dropup-content-flex {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  padding: 5px 16px;
+}
+
+.dropup-content-flex img {
+  height: 1.5vw;
+  width: auto;
+  margin: 0.1vw 0.2vw;
+}   
+
+.more-icons a:hover {background-color: #ddd;}
+
+.show {display: block;}
+
+/*-------MUSIC PLAYER BY GLENTHEMES-------*/
+
+#glenplayer07 {
+ position:fixed;
+ bottom:0;margin-bottom:30px;
+ left:0;margin-left:30px;
+ z-index:99;
+}
+ 
+.flamingo {
+ display:flex;
+ align-items:center;
+}
+ 
+.circleofdeath {
+ width:var(--Circle-Size);
+ height:var(--Circle-Size);
+ border-radius:100%;
+ overflow:hidden;
+}
+ 
+.tinfoil {
+ width:var(--Circle-Size);
+ height:var(--Circle-Size);
+ background:var(--Progress-Empty);
+ border-radius:100%;
+}
+ 
+.oven {
+ background:var(--Progress-Fill);
+}
+ 
+.oliveoil {
+ width:100%;
+ height:100%;
+}
+ 
+.crust {
+ position:absolute;
+ top:0;
+ display:flex;
+ align-items:center;
+ justify-content:center;
+ width:var(--Circle-Size);
+ height:var(--Circle-Size);
+}
+ 
+.cherry {
+ display:flex;
+ align-items:center;
+ justify-content:center;
+ width:calc(var(--Circle-Size) - (var(--Progress-Border-Size) * 2));
+ height:calc(var(--Circle-Size) - (var(--Progress-Border-Size) * 2));
+ background:var(--Player-Background);
+ border-radius:100%;
+ cursor:pointer;
+ z-index:1;
+}
+ 
+.music-controls {display:flex;align-items:center}
+ 
+.music-controls .material-icons {
+ font-size:var(--Play-Pause-Buttons-Size);
+ color:var(--Play-Pause-Buttons-Color);
+}
+ 
+.pausee {display:none;}
+ 
+.beff {display:none;}
+.aff {display:block;}
+ 
+.music-info {
+ margin-left:var(--Player-Text-Margin);
+ line-height:1em;
+}
+ 
+.song-name {
+ font-family:arial;
+ font-size:var(--Song-Name-Font-Size);
+ text-transform:uppercase;
+ letter-spacing:0.3px;
+ color:var(--Song-Name-Color);
+}
+ 
+.artist-name {
+ margin-top:3px;
+ font-family:arial;
+ font-size:var(--Artist-Name-Font-Size);
+ letter-spacing:0.3px;
+ color:var(--Artist-Name-Color);
+}
