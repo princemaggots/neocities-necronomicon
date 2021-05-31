@@ -18,11 +18,11 @@
     <!-- DESKTOP -->
     <div id="desktop">
       <div class="apps">
-        <img src="icons/trashfull.png"> 
+        <img id="recycle" src="icons/trashfull.png"> 
         Recycle Bin
       </div>
       
-      <div class="apps">
+      <div onclick="showApp('firefox')" class="apps">
         <img src="icons/firefox.png"> 
         Firefox
       </div>
@@ -46,14 +46,38 @@
         <img src="icons/p5s_logo.png"> 
         Persona 5 Strikers
       </div>
+
+      <!-- IFRAMES -->
+      <div id="firefox" class="iframeHolder"> 
+        <div id="firefoxheader" class="iframeHeader">
+          <p> firefox</p> 
+          <div class="iframeHeaderButtons">  
+          <button onclick="minimizeApp('firefox')"> <i class="far fa-window-minimize"></i></button>
+          <button onclick="maximizeApp('firefox', 'firefoxframe')"> <i class="far fa-window-maximize"></i></button>
+          <button onclick="showApp('firefox')"> <i class="fas fa-times"></i></button>
+         </div> 
+        </div>
+        <iframe class="iframeClass" id="firefoxframe" src="firefox.html"> </iframe>
+      </div>
+
     </div>
+
 
     <!-- TASKBAR -->
     <div id="taskbar"> 
 
-      <div class="taskbar-left">
-        <img src="icons/windows.png">
+      <div class="taskbarLeft">
+          <img src="icons/windows.png">
         <input type="text" id="searchbar" name="searchbar">
+        <div class="taskbar-icon">
+          <img src="icons/windows-98-explorer.png">
+        </div>
+        <div class="taskbar-icon">
+          <img src="icons/terminal.png">
+        </div>
+        <div onclick="showApp('firefox')" id="firefoxicon" class="taskbar-icon">
+          <img src="icons/firefox.png">
+        </div>
       </div>
       
       <div class="taskbar-right">
@@ -61,12 +85,8 @@
           <button onclick="showIcons()" class="dropbtn"> <i class="fas fa-chevron-up"></i> </button>
           <div id="moreIcons" class="dropup-content">
             <div class="dropup-content-flex">
-              <img src="icons/firefox.png"> 
-              <img src="icons/firefox.png"> 
-              <img src="icons/firefox.png"> 
-              <img src="icons/firefox.png"> 
-              <img src="icons/firefox.png"> 
-              <img src="icons/firefox.png"> 
+              <img src="icons/bluetooth.png"> 
+              <img src="icons/spotify.png"> 
             </div>
           </div>
           <i class="fas fa-battery-three-quarters"></i>
@@ -103,7 +123,6 @@
           </div>
         </div>
         <audio 
-          autoplay
           loop
           id="playerAudio" 
           src="https://dl.dropbox.com/s/6cs71k6xads8yq8/Persona%205%20-%20The%20Days%20When%20My%20Mother%20Was%20There%20%28Futaba%20Palace%20Theme%29.mp3" 
@@ -117,6 +136,9 @@
         </div>
       </div>
   </div>
+
+
+  
   <!-------JAVASCRIPT FUNCTIONS ------->
   <script src="utils.js"></script>
 

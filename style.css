@@ -172,19 +172,38 @@ a {
   bottom:0;
 }
 
-.taskbar-left {
+.taskbarLeft {
   display: flex;
   flex-wrap: nowrap;
   justify-content: flex-start;
   max-width: 65vw;
 }
 
+.taskbar-icon {
+  height: 3vw;
+  width: 3vw;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0 0.25vw;
+}
+
+.taskbar-icon:hover {
+  background: var(--themeColor25);
+} 
+
+.taskbar-icon img {
+  width: 85%;
+  height: auto;
+}
 .taskbar-right {
   display: flex;
   flex-wrap: nowrap;
   justify-content: flex-end;
   max-width: 25vw;
 }
+
+
 
 #searchbar {
   padding: 6px;
@@ -291,7 +310,7 @@ a {
 
 .more-icons a:hover {background-color: #1f1f1f22;}
 
-.show {display: block;}
+.show {display: block!important;}
 
 .soundButton {
   background: transparent;
@@ -310,6 +329,73 @@ a {
   padding: 5px 0px;
   justify-content: space-evenly;
   min-height: 4vw;
+}
+
+.focus {
+  background: var(--themeColor75);
+}
+
+.focus:hover {
+  background: var(--themeColor);
+}
+
+.running {
+  border-bottom: 2px solid var(--themeColor);
+  height: auto;
+}
+
+.maximized {
+  height: 94vh;
+  width: 98%;
+}
+
+.maximized iframe {
+  height: 100%!important;
+  width: 100%!important;
+}
+/* --- IFRAME (to support apps) --- */
+
+.iframeHolder {
+  position: absolute;
+  display: none;
+  z-index: 100;
+  /* margin: -41vw 40vw; */
+  
+}
+.iframeHeader {
+  /* padding: 10px; */
+  cursor: move;
+  z-index: 110;
+  background-color: var(--themeColor);
+  color: #000;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.iframeHeader p {
+  margin: 0 10px;
+}
+
+.iframeHeaderButtons {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.iframeHeader button {
+  padding: 0.3vw;
+  border: 1px solid var(--backgroundColor);
+  background: transparent;
+  margin: 0;
+}
+
+.iframeHeader button:hover {
+  background: var(--backgroundColor);
+  border: 1px solid var(--themeColor);
+  color: #f2f2f2;
+}
+iframe {
+  resize: both;
 }
 
 /* --- SOUND STYLING --- */

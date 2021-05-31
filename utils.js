@@ -1,4 +1,16 @@
+// RECYCLE BIN
+    const recycleBin = document.getElementById('recycle');
+    let trash = 'full';
 
+    recycleBin.addEventListener('click', () => {
+        if (trash === 'full') {
+            recycleBin.src = ("icons/trashempty.png");
+            trash = 'empty';
+        } else {
+            recycleBin.src = ("icons/trashfull.png");
+            trash = 'full';
+        }
+    });
 
 // TIME FUNCTION
     function display_ct6() {
@@ -171,3 +183,99 @@
     });
 
     //make toggle class for changing audio
+
+// DRAGGABLE IFRAMES FOR APPS
+    // Make the DIV element draggable:
+    dragElement(document.getElementById("firefox"));
+
+    function dragElement(elmnt) {
+    var pos1 = 0, pos2 = 0, pos3 = 0, pos4 = 0;
+    if (document.getElementById(elmnt.id + "header")) {
+        // if present, the header is where you move the DIV from:
+        document.getElementById(elmnt.id + "header").onmousedown = dragMouseDown;
+    } else {
+        // otherwise, move the DIV from anywhere inside the DIV:
+        elmnt.onmousedown = dragMouseDown;
+    }
+
+    function dragMouseDown(e) {
+        e = e || window.event;
+        e.preventDefault();
+        // get the mouse cursor position at startup:
+        pos3 = e.clientX;
+        pos4 = e.clientY;
+        document.onmouseup = closeDragElement;
+        // call a function whenever the cursor moves:
+        document.onmousemove = elementDrag;
+    }
+
+    function elementDrag(e) {
+        e = e || window.event;
+        e.preventDefault();
+        // calculate the new cursor position:
+        pos1 = pos3 - e.clientX;
+        pos2 = pos4 - e.clientY;
+        pos3 = e.clientX;
+        pos4 = e.clientY;
+        // set the element's new position:
+        elmnt.style.top = (elmnt.offsetTop - pos2) + "px";
+        elmnt.style.left = (elmnt.offsetLeft - pos1) + "px";
+    }
+
+    function closeDragElement() {
+        // stop moving when mouse button is released:
+        document.onmouseup = null;
+        document.onmousemove = null;
+    }
+}
+// SHOW HIDE APPS
+let minimized = 'noclicked';
+var regex2 = /icon+/g
+
+    function showApp(desktopicon) {
+        document.getElementById(desktopicon).classList.toggle("show");
+        if (minimized == 'noclicked') {
+            document.getElementById(desktopicon + "icon").classList.toggle("running")
+           
+        } else {
+            minimized = 'noclicked';
+        }      
+    } 
+
+    function minimizeApp(app) {
+        document.getElementById(app).classList.toggle("show");
+        minimized = 'clicked';
+    }
+
+    function maximizeApp(app, iframe) {
+        document.getElementById(app).classList.toggle("maximized");
+        //document.getElementById(iframe).classList.toggle("maximized");
+    }
+// TASKBAR ICON CHANGE WHEN CLICKED
+
+        var taskbarIcons = taskbar.getElementsByClassName("focus");
+        var appRunning = desktop.getElementsByTagName("iframe")[0];
+        let focused = 'nofocus'
+
+        function checkFocus() {
+            //console.log(document.activeElement)
+            if(document.activeElement == appRunning ) {
+                if (focused === 'nofocus') {
+                    setFocus(document.activeElement.id);
+                    focused ='yesfocus'
+                    console.log("focusing")
+                }
+            } else {
+                $(taskbarIcons).removeClass("focus");
+                focused = 'nofocus'
+            }
+          }
+          
+        function setFocus(ff) {
+            var regex = /(header)|(frame)+/g
+            focusIcone = (ff.replace(regex, 'icon'));
+             $(document.getElementById(focusIcone)).addClass("focus");
+        }
+
+
+          window.setInterval(checkFocus, 100); 
