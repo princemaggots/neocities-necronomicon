@@ -186,7 +186,13 @@
 
 // DRAGGABLE IFRAMES FOR APPS
     // Make the DIV element draggable:
-    dragElement(document.getElementById("firefox"));
+    var appDrags = Object.values(document.getElementsByClassName('iframeHolder'));
+    appDrags.map((item) =>{
+        dragElement(item);
+    })
+    
+    
+
 
     function dragElement(elmnt) {
     var pos1 = 0, pos2 = 0, pos3 = 0, pos4 = 0;
@@ -235,7 +241,7 @@ var regex2 = /icon+/g
     function showApp(desktopicon) {
         document.getElementById(desktopicon).classList.toggle("show");
         if (minimized == 'noclicked') {
-            document.getElementById(desktopicon + "icon").classList.toggle("running")
+            (document.getElementById(desktopicon + "icon")).classList.toggle("running")
            
         } else {
             minimized = 'noclicked';

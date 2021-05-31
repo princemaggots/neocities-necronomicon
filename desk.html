@@ -27,17 +27,17 @@
         Firefox
       </div>
       
-      <div class="apps">
+      <div onclick="showApp('git')" class="apps">
         <img src="icons/git.png"> 
         Git Bash
       </div>
       
-      <div class="apps">
+      <div onclick="showApp('code')" class="apps">
         <img src="icons/visual.png"> 
         Visual Studio Code
       </div>
       
-      <div class="apps">
+      <div onclick="showApp('discord')" class="apps">
         <img src="icons/discord.png"> 
         Discord
       </div>
@@ -60,6 +60,66 @@
         <iframe class="iframeClass" id="firefoxframe" src="apps/firefox.html"> </iframe>
       </div>
 
+      <div id="git" class="iframeHolder"> 
+        <div id="githeader" class="iframeHeader">
+          <p> git</p> 
+          <div class="iframeHeaderButtons">  
+          <button onclick="minimizeApp('git')"> <i class="far fa-window-minimize"></i></button>
+          <button onclick="maximizeApp('git', 'gitframe')"> <i class="far fa-window-maximize"></i></button>
+          <button onclick="showApp('git')"> <i class="fas fa-times"></i></button>
+         </div> 
+        </div>
+        <iframe class="iframeClass" id="gitframe" src="apps/git.html"> </iframe>
+      </div>
+
+      <div id="code" class="iframeHolder"> 
+        <div id="codeheader" class="iframeHeader">
+          <p> code</p> 
+          <div class="iframeHeaderButtons">  
+          <button onclick="minimizeApp('code')"> <i class="far fa-window-minimize"></i></button>
+          <button onclick="maximizeApp('code', 'codeframe')"> <i class="far fa-window-maximize"></i></button>
+          <button onclick="showApp('code')"> <i class="fas fa-times"></i></button>
+         </div> 
+        </div>
+        <iframe class="iframeClass" id="codeframe" src="apps/code.html"> </iframe>
+      </div>
+
+      <div id="discord" class="iframeHolder"> 
+        <div id="discordheader" class="iframeHeader">
+          <p> discord</p> 
+          <div class="iframeHeaderButtons">  
+          <button onclick="minimizeApp('discord')"> <i class="far fa-window-minimize"></i></button>
+          <button onclick="maximizeApp('discord', 'discordframe')"> <i class="far fa-window-maximize"></i></button>
+          <button onclick="showApp('discord')"> <i class="fas fa-times"></i></button>
+         </div> 
+        </div>
+        <iframe class="iframeClass" id="discordframe" src="apps/discord.html"> </iframe>
+      </div>
+      
+      <div id="fileExp" class="iframeHolder"> 
+        <div id="fileExpheader" class="iframeHeader">
+          <p> file explorer</p> 
+          <div class="iframeHeaderButtons">  
+          <button onclick="minimizeApp('fileExp')"> <i class="far fa-window-minimize"></i></button>
+          <button onclick="maximizeApp('fileExp', 'fileExpframe')"> <i class="far fa-window-maximize"></i></button>
+          <button onclick="showApp('fileExp')"> <i class="fas fa-times"></i></button>
+         </div> 
+        </div>
+        <iframe class="iframeClass" id="fileExpframe" src="apps/file-explorer.html"> </iframe>
+      </div>
+
+      <div id="terminal" class="iframeHolder"> 
+        <div id="terminalheader" class="iframeHeader">
+          <p> cmd prompt</p> 
+          <div class="iframeHeaderButtons">  
+          <button onclick="minimizeApp('terminal')"> <i class="far fa-window-minimize"></i></button>
+          <button onclick="maximizeApp('terminal', 'terminalframe')"> <i class="far fa-window-maximize"></i></button>
+          <button onclick="showApp('terminal')"> <i class="fas fa-times"></i></button>
+         </div> 
+        </div>
+        <iframe class="iframeClass" id="terminalframe" src="apps/terminal.html"> </iframe>
+      </div>
+
     </div>
 
 
@@ -69,10 +129,10 @@
       <div class="taskbarLeft">
           <img src="icons/windows.png">
         <input type="text" id="searchbar" name="searchbar">
-        <div class="taskbar-icon">
+        <div onclick="showApp('fileExp')" class="taskbar-icon">
           <img src="icons/windows-98-explorer.png">
         </div>
-        <div class="taskbar-icon">
+        <div onclick="showApp('terminal')" class="taskbar-icon">
           <img src="icons/terminal.png">
         </div>
         <div onclick="showApp('firefox')" id="firefoxicon" class="taskbar-icon">
