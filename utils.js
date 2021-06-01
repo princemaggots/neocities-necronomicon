@@ -261,6 +261,7 @@ var regex2 = /icon+/g
 
         var taskbarIcons = taskbar.getElementsByClassName("focus");
         var appRunning = desktop.getElementsByTagName("iframe")[0];
+        var openApps = desktop.getElementsByClassName("front");
         let focused = 'nofocus'
 
         function checkFocus() {
@@ -268,11 +269,15 @@ var regex2 = /icon+/g
             if(document.activeElement == appRunning ) {
                 if (focused === 'nofocus') {
                     setFocus(document.activeElement.id);
-                    focused ='yesfocus'
-                    console.log("focusing")
+                    var frontal = (document.activeElement.id).slice(0, -5);
+                    //console.log(frontal)
+                    $(document.getElementById(frontal)).addClass("front");
+                    focused ='yesfocus';
+                    //console.log("focusing")
                 }
             } else {
                 $(taskbarIcons).removeClass("focus");
+                $(openApps).removeClass("front");
                 focused = 'nofocus'
             }
           }
@@ -281,6 +286,7 @@ var regex2 = /icon+/g
             var regex = /(header)|(frame)+/g
             focusIcone = (ff.replace(regex, 'icon'));
              $(document.getElementById(focusIcone)).addClass("focus");
+
         }
 
 

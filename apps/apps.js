@@ -2,6 +2,7 @@
 
     document.addEventListener("DOMContentLoaded", () => {
         const inputField = document.getElementById("input");
+        const gitOpen = document.getElementById("git");
         inputField.addEventListener("keydown", (e) => {
         if (e.code === "Enter") {
             let input = inputField.value;
@@ -33,7 +34,10 @@
         product = compare(prompts, replies, text);
         } else if (text.match(/thank/gi)) {
         product = "You're welcome!"
-        } else {
+        } else if ((compare(gitprompts, gitreplies, text)) && (document.getElementById("git"))) {
+            console.log("found");
+            product = compare(gitprompts, gitreplies, text);
+         } else {
         // If all else fails: random alternative
         product = alternative[Math.floor(Math.random() * alternative.length)];
         }
@@ -50,6 +54,26 @@
             if (promptsArray[x][y] === string) {
             let replies = repliesArray[x];
             reply = replies[Math.floor(Math.random() * replies.length)];
+            replyFound = true;
+            // Stop inner loop when input value matches prompts
+            break;
+            }
+        }
+        if (replyFound) {
+            // Stop outer loop when reply is found instead of interating through the entire array
+            break;
+        }
+        }
+        return reply;
+    }
+    function compare(gitpromptsArray, gitrepliesArray, string) {
+        let reply;
+        let replyFound = false;
+        for (let x = 0; x < gitpromptsArray.length; x++) {
+        for (let y = 0; y < gitpromptsArray[x].length; y++) {
+            if (gitpromptsArray[x][y] === string) {
+            let gitreplies = gitrepliesArray[x];
+            reply = gitreplies[Math.floor(Math.random() * gitreplies.length)];
             replyFound = true;
             // Stop inner loop when input value matches prompts
             break;

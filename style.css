@@ -395,7 +395,13 @@ a {
   color: #f2f2f2;
 }
 iframe {
+  width: 50vw;
+  height: 30vw;
   resize: both;
+}
+
+.front {
+  z-index: 200!important;
 }
 
 /* --- SOUND STYLING --- */

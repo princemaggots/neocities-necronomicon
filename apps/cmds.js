@@ -23,7 +23,7 @@
   
   const replies = [
     [`DIRECTORY OF C:\\Users\\alibaba
-    
+
     Desktop
     Documents
     Downloads
@@ -100,8 +100,37 @@
   // Random for any other user input
   
   const alternative = [
-    "not a valid command. type help for some commands."
+    "not a valid command. type help (or git help in git) for some commands."
   ]
-  
 
+  const gitprompts = [
+    ["git add"],
+     [
+      "git commit", "git commit m"
+    ],
+    ["git push"],
+    ["git help"]
+  ]
+
+  const gitreplies = [
+    ["added"],
+    ["1 file changed, 5 insertions(+), 2 deletions(-)", 
+    "3 files changed, 75 insertions(+), 20 deletions(-)", 
+    "2 files changed, 15 insertions(+), 25 deletions(-)"
+    ],
+    [`Enumerating objects: 11, done.
+    Counting objects: 100% (11/11), done.
+    Delta compression using up to 16 threads
+    Compressing objects: 100% (7/7), done.
+    Writing objects: 100% (7/7), 3.01 KiB | 1.51 MiB/s, done.
+    Total 7 (delta 4), reused 0 (delta 0), pack-reused 0
+    remote: Resolving deltas: 100% (4/4), completed with 4 local objects.
+    To github.com:alibaba/????.git
+       3e24ac..1d41b22  main -> main
+    `],
+    [`additional git commands currently:
+    - git add
+    - git commit
+    - git push`]
+]
 

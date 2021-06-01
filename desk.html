@@ -47,6 +47,11 @@
         Persona 5 Strikers
       </div>
 
+      <div onclick="showApp('welcometxt')" class="apps">
+        <img src="icons/notepad.png"> 
+        welcome.txt
+      </div>
+
       <!-- IFRAMES -->
       <div id="firefox" class="iframeHolder"> 
         <div id="firefoxheader" class="iframeHeader">
@@ -118,6 +123,17 @@
          </div> 
         </div>
         <iframe class="iframeClass" id="terminalframe" src="apps/terminal.html"> </iframe>
+      </div>
+      <div id="welcometxt" class="iframeHolder show"> 
+        <div id="welcometxtheader" class="iframeHeader">
+          <p> welcome.txt</p> 
+          <div class="iframeHeaderButtons">  
+          <button onclick="minimizeApp('welcometxt')"> <i class="far fa-window-minimize"></i></button>
+          <button onclick="maximizeApp('welcometxt', 'welcometxtframe')"> <i class="far fa-window-maximize"></i></button>
+          <button onclick="showApp('welcometxt')"> <i class="fas fa-times"></i></button>
+         </div> 
+        </div>
+        <iframe class="iframeClass" id="welcometxtframe" src="apps/files/welcome.html"> </iframe>
       </div>
 
     </div>
