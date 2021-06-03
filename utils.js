@@ -1,18 +1,24 @@
-// RECYCLE BIN
-    const recycleBin = document.getElementById('recycle');
-    let trash = 'full';
+// RECYCLE BIN   
+        var recycleBin = document.getElementById('recycle');
+        let trash = 'full';
 
-    recycleBin.addEventListener('click', () => {
-        if (trash === 'full') {
-            recycleBin.src = ("icons/trashempty.png");
-            trash = 'empty';
-        } else {
-            recycleBin.src = ("icons/trashfull.png");
-            trash = 'full';
-        }
-    });
+        if (recycleBin) {
+            recycleBin.addEventListener('click', () => {
+                if (trash === 'full') {
+                    recycleBin.src = ("icons/trashempty.png");
+                    trash = 'empty';
+                } else {
+                    recycleBin.src = ("icons/trashfull.png");
+                    trash = 'full';
+                }
+            });
+        };
+        
 
 // TIME FUNCTION
+    var timeCurrent = document.getElementById('currentTime');
+    var dateCurrent =  document.getElementById("currentDate")
+
     function display_ct6() {
         var x = new Date()
         var ampm = x.getHours( ) >= 12 ? ' PM' : ' AM';
@@ -20,7 +26,9 @@
             hours = hours ? hours : 12;
             mins = ('0'+x.getMinutes()).slice(-2)
         var x1=hours + ":" +  mins + ampm;
-        document.getElementById('currentTime').innerHTML = x1;
+        (timeCurrent) && 
+            (document.getElementById('currentTime').innerHTML = x1);
+        //document.getElementById('currentTime').innerHTML = x1;
         display_c6();
          }
       function display_c6(){
@@ -32,7 +40,7 @@
 // DATE FUNCTION
       var today = new Date();
       var date =(today.getMonth()+1)+'/'+today.getDate()+'/'+today.getFullYear();
-      document.getElementById("currentDate").innerHTML = date;
+      (dateCurrent) && (document.getElementById("currentDate").innerHTML = date);
       
 // DROPUP MENUS
       /* When the user clicks on the button, 
@@ -81,7 +89,8 @@
     let sound = 'on';
     //console.log(seekSlider.value);
 
-    playerIconContainer.addEventListener('click', () => {
+    if (playerIconContainer) {
+            playerIconContainer.addEventListener('click', () => {
         if (state === 'play') {
             $(playerIcon).removeClass('fa-play');
             $(playerIcon).addClass('fa-pause');
@@ -109,15 +118,20 @@
             playerAudio.muted = false;
             sound = 'on';
         }
-    });
+    });    
+    
     const showRangeProgress = (rangeInput) => {
         if(rangeInput === seekSlider) audioPlayerContainer.style.setProperty('--seek-before-width', rangeInput.value / rangeInput.max * 100 + '%');
         else console.log("how")
     }
 
+    
     seekSlider.addEventListener('input', (e) => {
         showRangeProgress(e.target);
     });
+    }
+
+
 
     /** Implementation of the functionality of the audio player */
 
@@ -153,7 +167,8 @@
         raf = requestAnimationFrame(whilePlaying);
     }
 
-    if (playerAudio.readyState > 0) {
+    if (playerAudio) {
+        if (playerAudio.readyState > 0) {
         displayDuration();
         setSliderMax();
         displayBufferedAmount();
@@ -164,7 +179,7 @@
             displayBufferedAmount();
         });
     }
-
+    
     playerAudio.addEventListener('progress', displayBufferedAmount);
 
     seekSlider.addEventListener('input', () => {
@@ -181,6 +196,9 @@
             requestAnimationFrame(whilePlaying);
         }
     });
+    }
+    
+
 
     //make toggle class for changing audio
 
@@ -259,35 +277,40 @@ var regex2 = /icon+/g
     }
 // TASKBAR ICON CHANGE WHEN CLICKED
 
-        var taskbarIcons = taskbar.getElementsByClassName("focus");
-        var appRunning = desktop.getElementsByTagName("iframe")[0];
-        var openApps = desktop.getElementsByClassName("front");
-        let focused = 'nofocus'
+        function checkFocus() { 
+            var taskbarIcons = top.document.getElementsByClassName("taskbar-icon");
+            var appRunning = Object.values(top.document.getElementsByTagName("iframe"));
+            var openApps = top.document.getElementsByClassName("front"); 
+        
+            window.addEventListener ?
+            window.addEventListener('blur', blurHappened, true)
+            : window.attachEvent('onfocusout', blurHappened);
 
-        function checkFocus() {
-            //console.log(document.activeElement)
-            if(document.activeElement == appRunning ) {
-                if (focused === 'nofocus') {
-                    setFocus(document.activeElement.id);
-                    var frontal = (document.activeElement.id).slice(0, -5);
-                    //console.log(frontal)
-                    $(document.getElementById(frontal)).addClass("front");
-                    focused ='yesfocus';
-                    //console.log("focusing")
-                }
-            } else {
+            function blurHappened() {
                 $(taskbarIcons).removeClass("focus");
                 $(openApps).removeClass("front");
-                focused = 'nofocus'
+                if (appRunning.includes(top.document.activeElement)) {
+                    console.log(top.document.activeElement.id);
+                    setFocus(top.document.activeElement.id);
+                    var frontal = (top.document.activeElement.id).slice(0, -5);
+                    $(top.document.getElementById(frontal)).addClass("front");
+                    
+                } 
             }
-          }
-          
-        function setFocus(ff) {
-            var regex = /(header)|(frame)+/g
-            focusIcone = (ff.replace(regex, 'icon'));
-             $(document.getElementById(focusIcone)).addClass("focus");
-
-        }
+                  
+            function setFocus(ff) {
+                var regex = /(header)|(frame)+/g
+                focusIcone = (ff.replace(regex, 'icon'));
+                $(top.document.getElementById(focusIcone)).addClass("focus");
+            }
+        };
+            
+        
 
 
           window.setInterval(checkFocus, 100); 
+
+
+         
+        
+       
