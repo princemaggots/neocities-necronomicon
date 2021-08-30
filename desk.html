@@ -11,7 +11,11 @@
     <script src="https://kit.fontawesome.com/75964e879a.js" crossorigin="anonymous"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/bodymovin/5.7.8/lottie.min.js" integrity="sha512-w58XJ/0dVbEfZVJoJyBUOTMGBWmIW4jEYJSA0898d2L0Ghpum0FvwK7qTuHhkTctApzrchv3Neli+28ajI4+fg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-
+    <script>
+      $(function(){
+    $("#includedContent").load("app-windows.html"); 
+    });
+    </script>
   </head>
   <body>
     
@@ -47,94 +51,12 @@
         Persona 5 Strikers
       </div>
 
-      <div onclick="showApp('welcometxt')" class="apps">
+      <div onclick="showMultiApp('welcometxt')" class="apps">
         <img src="icons/notepad.png"> 
         welcome.txt
       </div>
 
-      <!-- IFRAMES -->
-      <div id="firefox" class="iframeHolder"> 
-        <div id="firefoxheader" class="iframeHeader">
-          <p> firefox</p> 
-          <div class="iframeHeaderButtons">  
-          <button onclick="minimizeApp('firefox')"> <i class="far fa-window-minimize"></i></button>
-          <button onclick="maximizeApp('firefox', 'firefoxframe')"> <i class="far fa-window-maximize"></i></button>
-          <button onclick="showApp('firefox')"> <i class="fas fa-times"></i></button>
-         </div> 
-        </div>
-        <iframe class="iframeClass" id="firefoxframe" src="apps/firefox.html"> </iframe>
-      </div>
-
-      <div id="git" class="iframeHolder"> 
-        <div id="githeader" class="iframeHeader">
-          <p> git</p> 
-          <div class="iframeHeaderButtons">  
-          <button onclick="minimizeApp('git')"> <i class="far fa-window-minimize"></i></button>
-          <button onclick="maximizeApp('git', 'gitframe')"> <i class="far fa-window-maximize"></i></button>
-          <button onclick="showApp('git')"> <i class="fas fa-times"></i></button>
-         </div> 
-        </div>
-        <iframe class="iframeClass" id="gitframe" src="apps/git.html"> </iframe>
-      </div>
-
-      <div id="code" class="iframeHolder"> 
-        <div id="codeheader" class="iframeHeader">
-          <p> code</p> 
-          <div class="iframeHeaderButtons">  
-          <button onclick="minimizeApp('code')"> <i class="far fa-window-minimize"></i></button>
-          <button onclick="maximizeApp('code', 'codeframe')"> <i class="far fa-window-maximize"></i></button>
-          <button onclick="showApp('code')"> <i class="fas fa-times"></i></button>
-         </div> 
-        </div>
-        <iframe class="iframeClass" id="codeframe" src="apps/code.html"> </iframe>
-      </div>
-
-      <div id="discord" class="iframeHolder"> 
-        <div id="discordheader" class="iframeHeader">
-          <p> discord</p> 
-          <div class="iframeHeaderButtons">  
-          <button onclick="minimizeApp('discord')"> <i class="far fa-window-minimize"></i></button>
-          <button onclick="maximizeApp('discord', 'discordframe')"> <i class="far fa-window-maximize"></i></button>
-          <button onclick="showApp('discord')"> <i class="fas fa-times"></i></button>
-         </div> 
-        </div>
-        <iframe class="iframeClass" id="discordframe" src="apps/discord.html"> </iframe>
-      </div>
-      
-      <div id="fileExp" class="iframeHolder"> 
-        <div id="fileExpheader" class="iframeHeader">
-          <p> file explorer</p> 
-          <div class="iframeHeaderButtons">  
-          <button onclick="minimizeApp('fileExp')"> <i class="far fa-window-minimize"></i></button>
-          <button onclick="maximizeApp('fileExp', 'fileExpframe')"> <i class="far fa-window-maximize"></i></button>
-          <button onclick="showApp('fileExp')"> <i class="fas fa-times"></i></button>
-         </div> 
-        </div>
-        <iframe class="iframeClass" id="fileExpframe" src="apps/file-explorer.html"> </iframe>
-      </div>
-
-      <div id="terminal" class="iframeHolder"> 
-        <div id="terminalheader" class="iframeHeader">
-          <p> cmd prompt</p> 
-          <div class="iframeHeaderButtons">  
-          <button onclick="minimizeApp('terminal')"> <i class="far fa-window-minimize"></i></button>
-          <button onclick="maximizeApp('terminal', 'terminalframe')"> <i class="far fa-window-maximize"></i></button>
-          <button onclick="showApp('terminal')"> <i class="fas fa-times"></i></button>
-         </div> 
-        </div>
-        <iframe class="iframeClass" id="terminalframe" src="apps/terminal.html"> </iframe>
-      </div>
-      <div id="welcometxt" class="iframeHolder show"> 
-        <div id="welcometxtheader" class="iframeHeader">
-          <p> welcome.txt</p> 
-          <div class="iframeHeaderButtons">  
-          <button onclick="minimizeApp('welcometxt')"> <i class="far fa-window-minimize"></i></button>
-          <button onclick="maximizeApp('welcometxt', 'welcometxtframe')"> <i class="far fa-window-maximize"></i></button>
-          <button onclick="showApp('welcometxt')"> <i class="fas fa-times"></i></button>
-         </div> 
-        </div>
-        <iframe class="iframeClass" id="welcometxtframe" src="apps/files/welcome.html"> </iframe>
-      </div>
+      <div id="includedContent"></div>
 
     </div>
 
@@ -145,24 +67,37 @@
       <div class="taskbarLeft">
           <img src="icons/windows.png">
         <input type="text" id="searchbar" name="searchbar">
-        <div onclick="showApp('fileExp')" class="taskbar-icon">
+        <div onclick="showApp('fileExp')" id="fileExpicon" class="taskbar-icon">
           <img src="icons/windows-98-explorer.png">
         </div>
-        <div onclick="showApp('terminal')" class="taskbar-icon">
+        <div onclick="showApp('terminal')" id="terminalicon" class="taskbar-icon">
           <img src="icons/terminal.png">
         </div>
         <div onclick="showApp('firefox')" id="firefoxicon" class="taskbar-icon">
           <img src="icons/firefox.png">
         </div>
-        <div onclick="showApp('git')" id="giticon" class="taskbar-icon">
+        <div onclick="showApp('git')" id="giticon" class="taskbar-icon no-always-show hidden">
           <img src="icons/git.png">
         </div>
-        <div onclick="showApp('code')" id="codeicon" class="taskbar-icon">
+        <div onclick="showApp('code')" id="codeicon" class="taskbar-icon no-always-show hidden">
           <img src="icons/visual.png">
         </div>
-        <div onclick="showApp('discord')" id="discordicon" class="taskbar-icon">
+        <div onclick="showApp('discord')" id="discordicon" class="taskbar-icon no-always-show hidden">
           <img src="icons/discord.png">
-      </div>
+        </div>
+        <div class="more-icons taskbar-icon" id="notesicon">
+          <button onclick="showAppInTaskbar('moreNotes')" class="dropbtn"> <img src="icons/notepad.png"> </button>
+          <div id="moreNotes" class="dropup-content">
+            <div class="dropup-content-flex">
+              <div onclick="showMultiApp('welcometxt')" id="welcometxticon" class="taskbar-icon noteApp">
+                <img src="icons/notepad.png"> 
+              </div>
+              <div onclick="showMultiApp('ultifavestxt')" id="ultifavestxticon" class="taskbar-icon noteApp">
+                <img src="icons/notepad.png"> 
+              </div>
+            </div>
+          </div>
+        </div>
       </div>
       
       <div class="taskbar-right">

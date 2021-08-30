@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    
+    <title>document</title>
+    <!-- The style.css file allows you to change the look of your web pages.
+         If you include the next line in all your web pages, they will all share the same look.
+         This makes it easier to make new pages for your site. -->
+    <link href="../../../style.css" rel="stylesheet" type="text/css" >
+    <script src="https://kit.fontawesome.com/75964e879a.js" crossorigin="anonymous"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bodymovin/5.7.8/lottie.min.js" integrity="sha512-w58XJ/0dVbEfZVJoJyBUOTMGBWmIW4jEYJSA0898d2L0Ghpum0FvwK7qTuHhkTctApzrchv3Neli+28ajI4+fg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
+  </head>
+  <body>
+    <div class="file-topbar">
+      <div class="file-arrows">
+      <i class="fas fa-arrow-left" onclick="goBack()"></i> 
+      <i class="fas fa-arrow-right"  onclick="goForward()"></i>
+      <i class="fas fa-angle-down"></i>
+      <i class="fas fa-arrow-up"></i>
+    </div>
+      <div class="file-nav">
+        <div>
+          <i class="far fa-folder"></i>
+          <i class="fas fa-angle-right"></i>
+          This PC
+          <i class="fas fa-angle-right"></i>
+          Documents 
+          <i class="fas fa-angle-right"></i>
+          Movies
+        </div>
+        <div>
+          <i class="fas fa-angle-down"></i>
+          <i class="fas fa-redo-alt fa-flip-horizontal" onclick="reloadPage()"></i>
+        </div>
+      </div>
+      <div class="file-search">
+        <label> <i class="fas fa-search"></i> </label>
+        <input type="text/css" class="searchbar"> </input>
+      </div>
+    </div>
+    <div class="file-mainspace">
+      <div class="filesidebar"> 
+        <div style="margin-left: -45px;">
+          <ul style="margin-left: 0"> 
+            <li> <a href="../file-explorer.html">my computer</a> </li>
+            <ul>
+              <li> <i class="fas fa-desktop"></i> desktop </li>
+              <ul>
+                <li> <i class="far fa-file"></i> welcome.txt </li>
+              </ul>
+              <li> <i class="fas fa-download"></i> <a href="../downloads.html">downloads</a> </li>
+              <li>  <i class="far fa-file"></i> <a href="../documents.html">documents</a> </li>
+              <li> <i class="fas fa-music"></i> <a href="../music.html">music</a> </li>
+              <li> <i class="fas fa-image"></i> <a href="../pics.html">pictures</a> </li>
+              <li> <i class="fas fa-film"></i> <a href="../video.html">videos</a> </li>
+            </ul>
+          </ul>
+        </div>
+        
+      </div>
+      <div class="file-content">
+        <div class="file-column">
+          <span class="file-label"> name </span>
+          <span> <a href="#"> <i class="far fa-file"></i> (!) marks top faves lmfao </a>  </span>
+          <span> <a href="#"> <i class="far fa-file-video"></i> (!) metalocalypse </a>  </span>
+          <span> <a href="#"> <i class="far fa-file-video"></i> (!) mr robot </a>  </span>
+          <span> <a href="#"> <i class="far fa-file-video"></i> (!) venture bros </a>  </span>
+          <span> <a href="#"> <i class="far fa-file-video"></i> rick and morty </a>  </span>
+          <span> <a href="#"> <i class="far fa-file-video"></i> invader zim </a>  </span>
+          <!-- need to edit txt to run another iframe in the parent element -->
+        </div>
+        <div class="file-column">
+          <span class="file-label"> date </span>
+          <span> <a href="#"> 8/29/2021 10:05 PM </a> </span>
+          <span> <a href="#"> 8/29/2021 10:05 PM </a> </span>
+          <span> <a href="#"> 8/29/2021 10:05 PM </a> </span>
+          <span> <a href="#"> 8/29/2021 10:05 PM </a> </span>
+          <span> <a href="#"> 8/29/2021 10:05 PM </a> </span>
+          <span> <a href="#"> 8/29/2021 10:05 PM </a> </span>
+        </div>
+        <div class="file-column">
+          <span class="file-label"> type </span>
+          <span> <a href="#"> text document </a> </span>
+          <span> <a href="#"> mp4 file </a>  </span>
+          <span> <a href="#"> mp4 file </a>  </span>
+          <span> <a href="#"> mp4 file </a>  </span>
+          <span> <a href="#"> mp4 file </a>  </span>
+          <span> <a href="#"> mp4 file </a>  </span>
+        </div>
+        <div class="file-column">
+          <span class="file-label"> size </span>
+          <span> 1 kb</span>
+          <span class="folder"> x </span>
+          <span class="folder"> x </span>
+          <span class="folder"> x </span>
+          <span class="folder"> x </span>
+          <span class="folder"> x </span>
+          <span class="folder"> x </span>
+          <span class="folder"> x </span>
+        </div>
+      </div>
+    </div>
+    <div style="display: flex; align-items: center; padding: 5px; padding-top: 10px;">
+      <span> 3 items </span>
+    </div>
+  
+    
+  <!-------JAVASCRIPT FUNCTIONS ------->
+  <script src="../../utils.js"></script>
+
+  </body>
+</html>

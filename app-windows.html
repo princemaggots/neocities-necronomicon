@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    
+    <title>futaba sakura mwehehehehe</title>
+    <!-- The style.css file allows you to change the look of your web pages.
+         If you include the next line in all your web pages, they will all share the same look.
+         This makes it easier to make new pages for your site. -->
+    <link href="style.css" rel="stylesheet" type="text/css" >
+  </head>
+  <body>
+          <!-- IFRAMES -->
+          <div id="firefox" class="iframeHolder"> 
+            <div id="firefoxheader" class="iframeHeader">
+              <p> firefox</p> 
+              <div class="iframeHeaderButtons">  
+              <button onclick="minimizeApp('firefox')"> <i class="far fa-window-minimize"></i></button>
+              <button onclick="maximizeApp('firefox', 'firefoxframe')"> <i class="far fa-window-maximize"></i></button>
+              <button onclick="showApp('firefox')"> <i class="fas fa-times"></i></button>
+             </div> 
+            </div>
+            <iframe class="iframeClass" id="firefoxframe" src="apps/firefox.html"> </iframe>
+          </div>
+    
+          <div id="git" class="iframeHolder"> 
+            <div id="githeader" class="iframeHeader">
+              <p> git</p> 
+              <div class="iframeHeaderButtons">  
+              <button onclick="minimizeApp('git')"> <i class="far fa-window-minimize"></i></button>
+              <button onclick="maximizeApp('git', 'gitframe')"> <i class="far fa-window-maximize"></i></button>
+              <button onclick="showApp('git')"> <i class="fas fa-times"></i></button>
+             </div> 
+            </div>
+            <iframe class="iframeClass" id="gitframe" src="apps/git.html"> </iframe>
+          </div>
+    
+          <div id="code" class="iframeHolder"> 
+            <div id="codeheader" class="iframeHeader">
+              <p> code</p> 
+              <div class="iframeHeaderButtons">  
+              <button onclick="minimizeApp('code')"> <i class="far fa-window-minimize"></i></button>
+              <button onclick="maximizeApp('code', 'codeframe')"> <i class="far fa-window-maximize"></i></button>
+              <button onclick="showApp('code')"> <i class="fas fa-times"></i></button>
+             </div> 
+            </div>
+            <iframe class="iframeClass" id="codeframe" src="apps/code.html"> </iframe>
+          </div>
+    
+          <div id="discord" class="iframeHolder"> 
+            <div id="discordheader" class="iframeHeader">
+              <p> discord</p> 
+              <div class="iframeHeaderButtons">  
+              <button onclick="minimizeApp('discord')"> <i class="far fa-window-minimize"></i></button>
+              <button onclick="maximizeApp('discord', 'discordframe')"> <i class="far fa-window-maximize"></i></button>
+              <button onclick="showApp('discord')"> <i class="fas fa-times"></i></button>
+             </div> 
+            </div>
+            <iframe class="iframeClass" id="discordframe" src="apps/discord.html"> </iframe>
+          </div>
+          
+          <div id="fileExp" class="iframeHolder"> 
+            <div id="fileExpheader" class="iframeHeader">
+              <p> file explorer</p> 
+              <div class="iframeHeaderButtons">  
+              <button onclick="minimizeApp('fileExp')"> <i class="far fa-window-minimize"></i></button>
+              <button onclick="maximizeApp('fileExp', 'fileExpframe')"> <i class="far fa-window-maximize"></i></button>
+              <button onclick="showApp('fileExp')"> <i class="fas fa-times"></i></button>
+             </div> 
+            </div>
+            <iframe name="fileExplorer" class="iframeClass" id="fileExpframe" src="apps/file-explorer.html"> </iframe>
+          </div>
+    
+          <div id="terminal" class="iframeHolder"> 
+            <div id="terminalheader" class="iframeHeader">
+              <p> cmd prompt</p> 
+              <div class="iframeHeaderButtons">  
+              <button onclick="minimizeApp('terminal')"> <i class="far fa-window-minimize"></i></button>
+              <button onclick="maximizeApp('terminal', 'terminalframe')"> <i class="far fa-window-maximize"></i></button>
+              <button onclick="showApp('terminal')"> <i class="fas fa-times"></i></button>
+             </div> 
+            </div>
+            <iframe class="iframeClass" id="terminalframe" src="apps/terminal.html"> </iframe>
+          </div>
+    
+          <div id="welcometxt" class="iframeHolder notesApp show"> 
+            <div id="welcometxtheader" class="iframeHeader">
+              <p> welcome.txt</p> 
+              <div class="iframeHeaderButtons">  
+              <button onclick="minimizeApp('welcometxt')"> <i class="far fa-window-minimize"></i></button>
+              <button onclick="maximizeApp('welcometxt', 'welcometxtframe')"> <i class="far fa-window-maximize"></i></button>
+              <button onclick="showMultiApp('welcometxt')"> <i class="fas fa-times"></i></button>
+             </div> 
+            </div>
+            <iframe class="iframeClass" id="welcometxtframe" src="apps/files/welcome.html"> </iframe>
+          </div>
+    
+          <div id="ultifavestxt" class="iframeHolder notesApp"> 
+            <div id="ultifavestxtheader" class="iframeHeader">
+              <p> ultimate faves.txt</p> 
+              <div class="iframeHeaderButtons">  
+              <button onclick="minimizeApp('ultifavestxt')"> <i class="far fa-window-minimize"></i></button>
+              <button onclick="maximizeApp('ultifavestxt', 'ultifavestxtframe')"> <i class="far fa-window-maximize"></i></button>
+              <button onclick="showMultiApp('ultifavestxt')"> <i class="fas fa-times"></i></button>
+             </div> 
+            </div>
+            <iframe class="iframeClass" id="ultifavestxtframe" src="apps/file-explorer/documents/ultimate-faves.html"> </iframe>
+          </div>
+  </body>
+</html>

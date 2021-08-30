@@ -14,12 +14,11 @@
     
     function output(input) {
         let product;
-    
         // Regex remove non word/space chars
         // Trim trailing whitespce
         // Remove digits - not sure if this is best
         // But solves problem of entering something like 'hi1'
-    
+        
         let text = input.toLowerCase().replace(/[^\w\s]/gi, "").replace(/[\d]/gi, "").trim();
         text = text
         .replace(/ a /g, " ")   // 'tell me a story' -> 'tell me story'
@@ -103,7 +102,7 @@
         //botImg.src = "bot-mini.png";
         //botImg.className = "avatar";
         botDiv.className = "bot response";
-        botText.innerText = "Typing...";
+        botText.innerText = "...";
         botDiv.appendChild(botText);
         //botDiv.appendChild(botImg);
         messagesContainer.appendChild(botDiv);
@@ -116,4 +115,6 @@
         }, 100
         )
     }
+
+
 

@@ -16,7 +16,7 @@
     ["yusuke", "inari"],
     ["mwehehe", "mwhehehe", "hehehe"],
     ["help", "help pls"],
-    ["cat hiddentxt", "less hiddentxt", "more hiddentxt"]
+    ["cat hiddentxt", "less hiddentxt", "more hiddentxt", "hiddentxt"]
   ]
   
   // Possible responses, in corresponding order
@@ -32,7 +32,7 @@
     Music
     hidden.txt`],
      [
-      "C:\Users\alibaba"
+      "C:\\Users\\alibaba"
     ],
     [
       "s4kur4", "sakura"

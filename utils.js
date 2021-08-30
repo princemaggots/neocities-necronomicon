@@ -1,5 +1,5 @@
 // RECYCLE BIN   
-        var recycleBin = document.getElementById('recycle');
+        var recycleBin = top.document.getElementById('recycle');
         let trash = 'full';
 
         if (recycleBin) {
@@ -16,8 +16,8 @@
         
 
 // TIME FUNCTION
-    var timeCurrent = document.getElementById('currentTime');
-    var dateCurrent =  document.getElementById("currentDate")
+    var timeCurrent = top.document.getElementById('currentTime');
+    var dateCurrent =  top.document.getElementById("currentDate")
 
     function display_ct6() {
         var x = new Date()
@@ -27,7 +27,7 @@
             mins = ('0'+x.getMinutes()).slice(-2)
         var x1=hours + ":" +  mins + ampm;
         (timeCurrent) && 
-            (document.getElementById('currentTime').innerHTML = x1);
+            (top.document.getElementById('currentTime').innerHTML = x1);
         //document.getElementById('currentTime').innerHTML = x1;
         display_c6();
          }
@@ -40,27 +40,31 @@
 // DATE FUNCTION
       var today = new Date();
       var date =(today.getMonth()+1)+'/'+today.getDate()+'/'+today.getFullYear();
-      (dateCurrent) && (document.getElementById("currentDate").innerHTML = date);
+      (dateCurrent) && (top.document.getElementById("currentDate").innerHTML = date);
       
 // DROPUP MENUS
       /* When the user clicks on the button, 
       toggle between hiding and showing the dropdown content */
       function showIcons() {
-        document.getElementById("moreIcons").classList.toggle("show");
+        top.document.getElementById("moreIcons").classList.toggle("show");
       }
 
       function showWifi() {
-        document.getElementById("myWifi").classList.toggle("show");
+        top.document.getElementById("myWifi").classList.toggle("show");
       }
 
       function showPlayer() {
-        document.getElementById("myPlayer").classList.toggle("show");
+        top.document.getElementById("myPlayer").classList.toggle("show");
+      }
+
+      function showAppInTaskbar(multiApp) {
+        top.document.getElementById(multiApp).classList.toggle("show");
       }
       
       // Close the dropdown if the user clicks outside of it
       window.onclick = function(event) {
         if (!event.target.closest('.more-icons')) {
-            var dropdowns = document.getElementsByClassName("dropup-content");
+            var dropdowns = top.document.getElementsByClassName("dropup-content");
             var i;
             for (i = 0; i < dropdowns.length; i++) {
             var openDropdown = dropdowns[i];
@@ -74,17 +78,17 @@
 // SOUND PLAYER
 
     // variable for button containing player
-    const playerIconContainer = document.getElementById('playerContainer');
+    const playerIconContainer = top.document.getElementById('playerContainer');
     //variable for button containing sound control
-    const sounderIconContainer = document.getElementById('soundContainer');
+    const sounderIconContainer = top.document.getElementById('soundContainer');
     // variable for the play icon
-    const playerIcon = document.getElementById('player');
+    const playerIcon = top.document.getElementById('player');
     // variable for the sound icon
-    const soundControl = document.getElementsByClassName('sound');
+    const soundControl = top.document.getElementsByClassName('sound');
     // variable for audio
-    const playerAudio = document.getElementById('playerAudio');
-    const audioPlayerContainer = document.getElementById('audio-player-container');
-    const seekSlider = document.getElementById('seek-slider');
+    const playerAudio = top.document.getElementById('playerAudio');
+    const audioPlayerContainer = top.document.getElementById('audio-player-container');
+    const seekSlider = top.document.getElementById('seek-slider');
     let state = 'play';
     let sound = 'on';
     //console.log(seekSlider.value);
@@ -135,8 +139,8 @@
 
     /** Implementation of the functionality of the audio player */
 
-    const durationContainer = document.getElementById('duration');
-    const currentTimeContainer = document.getElementById('current-song-time');
+    const durationContainer = top.document.getElementById('duration');
+    const currentTimeContainer = top.document.getElementById('current-song-time');
     let raf = null;
 
 
@@ -203,8 +207,9 @@
     //make toggle class for changing audio
 
 // DRAGGABLE IFRAMES FOR APPS
+
     // Make the DIV element draggable:
-    var appDrags = Object.values(document.getElementsByClassName('iframeHolder'));
+    var appDrags = Object.values(top.document.getElementsByClassName('iframeHolder'));
     appDrags.map((item) =>{
         dragElement(item);
     })
@@ -214,9 +219,9 @@
 
     function dragElement(elmnt) {
     var pos1 = 0, pos2 = 0, pos3 = 0, pos4 = 0;
-    if (document.getElementById(elmnt.id + "header")) {
+    if (top.document.getElementById(elmnt.id + "header")) {
         // if present, the header is where you move the DIV from:
-        document.getElementById(elmnt.id + "header").onmousedown = dragMouseDown;
+        top.document.getElementById(elmnt.id + "header").onmousedown = dragMouseDown;
     } else {
         // otherwise, move the DIV from anywhere inside the DIV:
         elmnt.onmousedown = dragMouseDown;
@@ -228,9 +233,9 @@
         // get the mouse cursor position at startup:
         pos3 = e.clientX;
         pos4 = e.clientY;
-        document.onmouseup = closeDragElement;
+        top.document.onmouseup = closeDragElement;
         // call a function whenever the cursor moves:
-        document.onmousemove = elementDrag;
+        top.document.onmousemove = elementDrag;
     }
 
     function elementDrag(e) {
@@ -248,33 +253,68 @@
 
     function closeDragElement() {
         // stop moving when mouse button is released:
-        document.onmouseup = null;
-        document.onmousemove = null;
+        top.document.onmouseup = null;
+        top.document.onmousemove = null;
     }
 }
 // SHOW HIDE APPS
-let minimized = 'noclicked';
-var regex2 = /icon+/g
+    var regex2 = /icon+/g
 
     function showApp(desktopicon) {
-        document.getElementById(desktopicon).classList.toggle("show");
-        if (minimized == 'noclicked') {
-            (document.getElementById(desktopicon + "icon")).classList.toggle("running")
-           
+        top.document.getElementById(desktopicon).classList.toggle("show");
+        console.log(top.document.getElementById(desktopicon + "icon").classList);
+        if (!top.document.getElementById(desktopicon).classList.contains("minimized")) {
+            (top.document.getElementById(desktopicon + "icon")).classList.toggle("running");
+            ((top.document.getElementById(desktopicon + "icon")).classList.contains("no-always-show")) &&
+                ((top.document.getElementById(desktopicon + "icon")).classList.toggle("hidden"));
         } else {
-            minimized = 'noclicked';
+            top.document.getElementById(desktopicon).classList.remove("minimized");
         }      
     } 
 
     function minimizeApp(app) {
-        document.getElementById(app).classList.toggle("show");
-        minimized = 'clicked';
+        top.document.getElementById(app).classList.toggle("show");
+        top.document.getElementById(app).classList.add("minimized");
     }
 
     function maximizeApp(app, iframe) {
-        document.getElementById(app).classList.toggle("maximized");
-        //document.getElementById(iframe).classList.toggle("maximized");
+        top.document.getElementById(app).classList.toggle("maximized");
     }
+
+    // add get element by class that contains "multiple-icons-show"
+    // show multiApp(multiapp) 
+    // check how many elements contain class "multipleIcons + nameoflist
+    // if id ends in txt or if id ends in png/jpg (idk)
+    // if txt then check how many elements in the multiple icons contain show
+    // if none than close div
+    // if there are than do not close div
+
+    function showMultiApp(multiapp) {        
+        top.document.getElementById(multiapp).classList.toggle("show");
+        showMultiIcon(multiapp);
+    }
+
+    
+
+    function showMultiIcon(multiAppIcon) {
+        var txtShown = (top.document.getElementsByClassName('notesApp show')).length > 0 ? 'notesOpen' : 'notesClosed';
+        if (multiAppIcon.match(/txt/g)) {
+            if (txtShown === 'notesClosed') {
+                console.log('notes are closed');
+                $(top.document.getElementById('notesicon')).addClass("hidden");
+                $(top.document.getElementById('notesicon')).removeClass("running")
+            } 
+            if (txtShown === 'notesOpen') {
+                console.log('notes are open');
+                $(top.document.getElementById('notesicon')).removeClass("hidden")
+                $(top.document.getElementById('notesicon')).addClass("running")
+            }
+        } else {
+            console.log("function no work");
+        }
+    }
+
+    // get element by id and show, check if class contains 
 // TASKBAR ICON CHANGE WHEN CLICKED
 
         function checkFocus() { 
@@ -290,7 +330,7 @@ var regex2 = /icon+/g
                 $(taskbarIcons).removeClass("focus");
                 $(openApps).removeClass("front");
                 if (appRunning.includes(top.document.activeElement)) {
-                    console.log(top.document.activeElement.id);
+                    //console.log(top.document.activeElement.id);
                     setFocus(top.document.activeElement.id);
                     var frontal = (top.document.activeElement.id).slice(0, -5);
                     $(top.document.getElementById(frontal)).addClass("front");
@@ -304,11 +344,24 @@ var regex2 = /icon+/g
                 $(top.document.getElementById(focusIcone)).addClass("focus");
             }
         };
-            
-        
-
 
           window.setInterval(checkFocus, 100); 
+
+function goBack() {
+    window.history.back();
+}
+
+function goForward() {
+    window.history.forward();
+}
+
+function reloadPage() {
+    location.reload();
+}
+function popUpWindow() {
+    var win = window.open();
+    win.document.write('<iframe width="560" height="315" src="https://neocities.org" frameborder="0" allowfullscreen></iframe>')
+}
 
 
          
