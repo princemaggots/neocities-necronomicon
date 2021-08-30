@@ -18,6 +18,10 @@
   --backgroundColor75: #000000bf;
   --backgroundColor50: #00000080;
   --backgroundColor25: #00000040;
+
+  /* -- thumbnail files */
+  --thumbnail-width: 200px;
+  --thumbnail-length: 230px;
 }
 
 /* ---- SCROLLBAR ---- */
@@ -150,6 +154,8 @@ a {
   flex-direction: column;
   flex-wrap: wrap;
   padding: 5px 10px;
+  align-content: flex-start;
+  justify-content: left;
 }
 
 .apps {
@@ -160,6 +166,7 @@ a {
   flex-wrap: nowrap;
   margin: 0.5vw;
   cursor: pointer;
+  margin-right: 1.5vw;
 }
 
 .apps img {
@@ -641,6 +648,7 @@ input[type=range]:focus::-ms-fill-upper {
   width: 100%;
   padding-right: 5px;
   margin-bottom: 7px;
+  cursor: default;
 }
 
 .filesidebar li {
@@ -672,6 +680,42 @@ span.folder {
 span.folder::selection {
   color: #00000000;
 }
+
+.content-thumbnail {
+  justify-content: left!important;
+  flex-wrap: wrap;
+  align-content: start;
+  padding-top: 10px;
+}
+
+.file-thumbnail {
+  height: var(--thumbnail-length);
+  width: var(--thumbnail-width);
+  margin: 15px;
+  margin-top: 0;
+  text-align: center;
+  padding: 10px;
+}
+
+.thumbnail {
+  width: var(--thumbnail-width);
+  height:var(--thumbnail-width);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 5px;
+  border: 1px solid #fffdfd0c;
+}
+
+.file-thumbnail:hover {
+  background: var(--themeColor25);
+}
+
+.thumbnail img {
+  max-width: var(--thumbnail-width);
+  max-height: var(--thumbnail-width);
+}
+
 
 /* --- TXT FILES ---- */
 h1 {
