@@ -394,6 +394,7 @@ a {
   position: absolute;
   display: none;
   z-index: 100;
+
   /* margin: -41vw 40vw; */
   
 }
@@ -444,6 +445,46 @@ iframe {
   display: none!important;
 }
 
+/* --- INDIVIDUAL LOCATIONS --- */
+#firefox {
+  top: 20px;
+  left: 80px;
+}
+
+#git {
+  top: 2vw;
+  left: 2vw;
+}
+
+#code {
+  top: 3vw;
+  left: 3vw;
+}
+
+#discord {
+  top: 4vw;
+  left: 4vw;
+}
+
+#fileexp {
+  top: 5vw;
+  left: 5vw;
+}
+
+#terminal {
+  top: 6vw;
+  left: 6vw;
+}
+
+#ultifavestxt {
+  top: 7vw;
+  left: 7vw;
+}
+
+#welcometxt {
+  left: 1vw;
+  top: 1vw;
+}
 /* --- SOUND STYLING --- */
 #audio-player-container {
   --seek-before-width: 0%;
@@ -724,4 +765,209 @@ h1 {
 
 .txt-file ul {
   list-style-type: '- '
+}
+
+.sprite {
+  max-width: 375px;
+}
+
+/*--- FIREFOX ---*/
+#browser-tabs {
+  width: 99.5%;
+  margin: auto;
+  display: flex;
+  padding-left: 10px;
+}
+
+.tab {
+  width: 100px;
+  height: 20px;
+  padding: 10px;
+  border: 1px solid var(--themeColor75);
+  border-bottom: none;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  
+}
+
+.tab i {
+  opacity: 0.75;
+}
+
+#browser-header {
+  display: flex;
+  width: 98.5%;
+  margin: auto;
+  border: 1px solid var(--themeColor75);
+  padding: 7px 10px;
+  align-items: center;
+  justify-content: space-between;
+
+}
+
+#browser-header input {
+  color: #ffff;
+  background: #ffffff2e;
+  font-family: inherit;
+  border: none;
+  padding: 3px;
+  width: 80%;
+  margin: 0 5px;
+}
+
+#browser-header i {
+  padding: 0 5px;
+}
+
+i.line {
+  border-left: 1px solid #c0c0c0b5;
+  padding-left: 15px;
+}
+
+#browser-content iframe {
+  width: 100%!important;
+  min-height: 75%!important;
+  resize: both;
+}
+
+#browser-content section {
+  display: none;
+}
+
+.video {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding-top: 10px;
+}
+
+.video iframe, #pong iframe {
+  width: 800px!important;
+  height: 500px!important;
+  resize: both;
+}
+
+.active {
+  background: var(--themeColor75);
+  color: var(--backgroundColor);
+}
+
+/* --- MOBILE DESKTOP --- */
+
+.mobile-desktop {
+  height: 75vh!important;
+}
+
+.mobile-desktop .apps {
+  width: 7.5vw;
+  min-height: 7.5vw;
+}
+
+.mobile-taskbar {
+  height: 10vh!important;
+  align-items: center;
+}
+
+.mobile-taskbar .taskbar-icon {
+  width: 10vw;
+  height: 10vw;
+}
+
+.mobile-taskbar .taskbar-right {
+  font-size: 28px;
+  align-items: center;
+  max-width: 30vw;
+}
+
+.mobile-taskbar .time {
+  width: 20vw;
+  align-items: center;
+}
+
+.mobile-taskbar .dropbtn {
+  font-size: 35px;
+}
+
+.mobile-taskbar .more-icons {
+  margin: 10px;
+}
+
+ .mobile-app {
+    top: 20px;
+    left: 350px;
+} 
+
+.mobile-desktop iframe {
+  width: 60vw!important;
+  height: 60vw!important;
+}
+
+.apps a {
+  color: inherit;
+}
+
+
+/* -- CUT IN --- */
+#cut-in {
+  position: absolute;
+  width: 98vw;
+  height: 98vh;
+  background: #0000004c;
+  z-index: 9999999999999;
+  display: none;
+}
+
+#cut-in img {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  min-width: 90%;
+  z-index: 9999999999999;
+}
+
+
+
+
+/* --- MEDIA FOR MOBILE --- */
+@media screen and (orientation: landscape) {
+
+    .mobile-taskbar .taskbar-icon {
+      width: 5vw;
+      height: 5vw;
+  }
+
+  .mobile-desktop iframe {
+    width: 60vw!important;
+    height: 40vw!important;
+  }
+
+  .mobile-app {
+    top: 20px;
+    left: 530px;
+  }
+}
+
+@media screen and (max-height: 500px) {
+
+    .taskbarLeft {
+      align-items: center;
+      height: 100%;
+    }
+
+    .mobile-taskbar {
+      height: 20vh!important;
+    }
+
+    .mobile-taskbar .taskbar-icon {
+      width: 7vw;
+      height: 7vw;
+    }
+}
+
+@media screen and (max-width: 1000px) and (orientation: portrait)  {
+    .mobile-desktop .apps {
+      width: 14.5vw!important;
+      min-height: 14.5vw!important;
+  }
 }

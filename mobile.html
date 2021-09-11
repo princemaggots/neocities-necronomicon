@@ -8,9 +8,7 @@
          If you include the next line in all your web pages, they will all share the same look.
          This makes it easier to make new pages for your site. -->
     <link href="style.css" rel="stylesheet" type="text/css" >
-    <link rel="icon" type="image/png" href="/sprites/oracle.png" sizes="16x16">
-    <link rel="icon" type="image/png" href="/sprites/oracle.png" sizes="32x32">
-    <link rel="icon" type="image/png" href="/sprites/oracle.png" sizes="96x96">
+    <!-- <meta name="viewport" content="width=device-width, initial-scale=1.0"> -->
     <script src="https://kit.fontawesome.com/75964e879a.js" crossorigin="anonymous"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/bodymovin/5.7.8/lottie.min.js" integrity="sha512-w58XJ/0dVbEfZVJoJyBUOTMGBWmIW4jEYJSA0898d2L0Ghpum0FvwK7qTuHhkTctApzrchv3Neli+28ajI4+fg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
@@ -20,36 +18,49 @@
     });
     </script>
   </head>
+  <style>
+      body {
+          font-size: 17px;
+      }
+  </style>
   <body>
     
     <!-- DESKTOP -->
-    <div id="desktop">
+    <div id="desktop" class="mobile-desktop">
       <div class="apps">
         <img id="recycle" src="icons/trashfull.png"> 
         Recycle Bin
       </div>
       
-      <div onclick="showApp('firefox')" class="apps">
-        <img src="icons/firefox.png"> 
-        Firefox
+      <div class="apps">
+        <a href="apps/firefox.html">
+            <img src="icons/firefox.png"> 
+            Firefox
+        </a>
       </div>
       
-      <div onclick="showApp('git')" class="apps">
-        <img src="icons/git.png"> 
-        Git Bash
+      <div class="apps">
+          <a href="apps/git.html">
+            <img src="icons/git.png"> 
+            Git Bash
+        </a>
       </div>
       
-      <!-- <div onclick="showApp('code')" class="apps">
-        <img src="icons/visual.png"> 
-        Visual Studio Code
+      <!-- <div class="apps">
+        <a href="apps/code.html">
+            <img src="icons/visual.png"> 
+            Visual Studio Code
+        </a>
       </div> -->
       
-      <div onclick="showApp('discord')" class="apps">
-        <img src="icons/discord.png"> 
-        Discord
+      <div class="apps">
+          <a href="apps/discord.html">
+            <img src="icons/discord.png"> 
+            Discord
+        </a>
       </div>
       
-      <div onclick="cutInFunction()" class="apps">
+      <div class="apps">
         <img src="icons/p5s_logo.png"> 
         Persona 5 Strikers
       </div>
@@ -58,53 +69,54 @@
         <img src="icons/notepad.png"> 
         welcome.txt
       </div>
-      <div onclick="showMultiApp('planstxt')" class="apps">
-        <img src="icons/notepad.png"> 
-        plans.txt
+      <div class="apps">
+        <a href="apps/files/plans.html">
+            <img src="icons/notepad.png"> 
+            plans.txt
+        </a>
       </div>
 
-      <div id="includedContent"></div>
-      <div id="cut-in">
-        <img id="futaba-reaction" src="sprites/futaba-reaction.png">
+      <div id="welcometxt" class="iframeHolder notesApp show mobile-app"> 
+        <div id="welcometxtheader" class="iframeHeader">
+          <p> welcome.txt</p> 
+          <div class="iframeHeaderButtons">  
+          <button onclick="minimizeApp('welcometxt')"> <i class="far fa-window-minimize"></i></button>
+          <button onclick="maximizeApp('welcometxt', 'welcometxtframe')"> <i class="far fa-window-maximize"></i></button>
+          <button onclick="showMultiApp('welcometxt')"> <i class="fas fa-times"></i></button>
+         </div> 
+        </div>
+        <iframe class="iframeClass" id="welcometxtframe" src="apps/files/welcome-mobile.html"> </iframe>
       </div>
+
     </div>
 
 
     <!-- TASKBAR -->
-    <div id="taskbar"> 
+    <div id="taskbar" class="mobile-taskbar"> 
 
       <div class="taskbarLeft">
-          <img src="icons/windows.png">
-        <input type="text" id="searchbar" name="searchbar">
-        <div onclick="showApp('fileExp')" id="fileExpicon" class="taskbar-icon">
-          <img src="icons/windows-98-explorer.png">
+        <!-- <input type="text" id="searchbar" name="searchbar"> -->
+        <div id="fileExpicon" class="taskbar-icon">
+            <a href="apps/file-explorer.html">
+                <img src="icons/windows-98-explorer.png">
+            </a>
         </div>
-        <div onclick="showApp('terminal')" id="terminalicon" class="taskbar-icon">
-          <img src="icons/terminal.png">
+        <div  id="terminalicon" class="taskbar-icon">
+            <a href="apps/terminal.html">
+                <img src="icons/terminal.png">
+            </a>
         </div>
-        <div onclick="showApp('firefox')" id="firefoxicon" class="taskbar-icon">
-          <img src="icons/firefox.png">
+        <div  id="firefoxicon" class="taskbar-icon">
+            <a href="apps/firefox.html">
+                <img src="icons/firefox.png">
+            </a>
         </div>
-        <div onclick="showApp('git')" id="giticon" class="taskbar-icon no-always-show hidden">
-          <img src="icons/git.png">
-        </div>
-        <div onclick="showApp('code')" id="codeicon" class="taskbar-icon no-always-show hidden">
-          <img src="icons/visual.png">
-        </div>
-        <div onclick="showApp('discord')" id="discordicon" class="taskbar-icon no-always-show hidden">
-          <img src="icons/discord.png">
-        </div>
+        
         <div class="more-icons taskbar-icon" id="notesicon">
           <button onclick="showAppInTaskbar('moreNotes')" class="dropbtn"> <img src="icons/notepad.png"> </button>
           <div id="moreNotes" class="dropup-content">
             <div class="dropup-content-flex">
               <div onclick="showMultiApp('welcometxt')" id="welcometxticon" class="taskbar-icon noteApp">
-                <img src="icons/notepad.png"> 
-              </div>
-              <div onclick="showMultiApp('ultifavestxt')" id="ultifavestxticon" class="taskbar-icon noteApp">
-                <img src="icons/notepad.png"> 
-              </div>
-              <div onclick="showMultiApp('planstxt')" id="planstxticon" class="taskbar-icon noteApp">
                 <img src="icons/notepad.png"> 
               </div>
             </div>
@@ -114,13 +126,6 @@
       
       <div class="taskbar-right">
         <div class="more-icons">
-          <button onclick="showIcons()" class="dropbtn"> <i class="fas fa-chevron-up"></i> </button>
-          <div id="moreIcons" class="dropup-content">
-            <div class="dropup-content-flex">
-              <img src="icons/bluetooth.png"> 
-              <img src="icons/spotify.png"> 
-            </div>
-          </div>
           <i class="fas fa-battery-three-quarters"></i>
         </div>
 
@@ -161,13 +166,6 @@
           preload=”metadata”
           type="audio">
         </audio> 
-
-        <audio 
-        id="cutInAudio" 
-        src="apps/file-explorer/music/cut-in-sound.mp3" 
-        preload=”metadata”
-        type="audio">
-      </audio> 
 
         <div class="time" >
           <p id="currentTime"></p>

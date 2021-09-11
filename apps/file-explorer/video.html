@@ -63,8 +63,8 @@
         <div class="file-column">
           <span class="file-label"> name </span>
           <!-- want to make videos display in firefox... but how? -->
-          <span> <a href="#" onclick="showApp('firefox'); showApp('git'); return false;"> <i class="far fa-file-video"></i> pong </a> </span>
-          <span> <a href="#"> <i class="far fa-file-video"></i> HI COW!!!! </a>  </span>
+          <span> <a href="#" onclick="showApp('firefox'); openTab('pong'); return false;"> <i class="far fa-file-video"></i> pong </a> </span>
+          <span> <a href="#" onclick="showApp('firefox'); openTab('cow'); return false;"> <i class="far fa-file-video"></i> HI COW!!!! </a>  </span>
           <!-- need to edit txt to run another iframe in the parent element -->
         </div>
         <div class="file-column">
@@ -91,6 +91,6 @@
     
   <!-------JAVASCRIPT FUNCTIONS ------->
   <script src="../../utils.js"></script>
-
+    <script src="../apps.js"></script>
   </body>
 </html>

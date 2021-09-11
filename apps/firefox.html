@@ -14,10 +14,63 @@
 
   </head>
   <body>
-    
-    <p> omg hiiii </p>
+    <div id="browser-tabs">
+      <div class="tab" id="searchtab" onclick="toggleTab('search')">
+        <span> search </span>
+        <i class="fas fa-times"></i>
+      </div>
+      <div class="tab" id="matrixtab" onclick="toggleTab('matrix')">
+        <span> the matrix </span>
+        <i class="fas fa-times"></i>
+      </div>
+
+      <div class="tab hidden" id="pongtab" onclick="toggleTab('pong')">
+        <span> Eisenfunk - Pong </span>
+        <i class="fas fa-times" onclick="closeTab('pong')"></i>
+      </div>
+
+      <div class="tab hidden" id="cowtab" onclick="toggleTab('cow')">
+        <span> HI COW!! </span>
+        <i class="fas fa-times" onclick="closeTab('cow')"></i>
+      </div>
+
+      <!-- make video tabs by hiding and showing with js -->
+      <div class="tab hidden">
+        <span> tab</span>
+      </div>
+    </div>
+    <div id="browser-header">
+      <div>
+        <i class="fas fa-arrow-left"></i>
+        <i class="fas fa-arrow-right"></i>
+        <i class="fas fa-redo"></i>
+      </div>
+      <input type="text/css" class="searchbar"> </input>
+      <div>
+        <i class="far fa-bookmark"></i>
+        <i class="far fa-user-circle"></i>
+        <i class="fas fa-bars line"></i>
+      </div>
+    </div>
+
+
+    <div id="browser-content">
+     <section id="search" class="show webpage">
+        <iframe src="https://duckduckgo.com/"> </iframe>
+      </section>  
+      <section class="webpage" id="matrix">
+        <iframe src="https://www.vox.com/culture/2019/3/30/18286436/the-matrix-wachowskis-trans-experience-redpill"> </iframe>
+      </section>
+      <section class="webpage video" id="pong">
+        <iframe  src="https://www.youtube.com/embed/cNAdtkSjSps" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+      </section>
+      <section class="webpage video" id="cow">
+        <iframe  src="https://www.youtube.com/embed/aW5Pxm17vro" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+      </section>
+    </div>
   <!-------JAVASCRIPT FUNCTIONS ------->
   <script src="../utils.js"></script>
+  <script src="apps.js"></script>
 
   </body>
 </html>

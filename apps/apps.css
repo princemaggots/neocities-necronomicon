@@ -1,0 +1,304 @@
+/* --- DISCORD --- */
+
+:root {
+    --discordMutedText: black;
+    --discordNormalChannels: #b9bbbe;
+    --discordIcons: #b9bbbe;
+}
+#discord {
+    display: flex;
+    MIN-height: 98vh;
+    font-size: 16px;
+    color: #f2f2f2;
+}
+
+/* -- sidebar -- */
+
+#discord-sidebar {
+    width: 175px;
+    display: flex;
+    flex-direction: column;
+    background: #202225;
+    align-items: center;
+    padding: 10px 0;  
+}
+
+#discord-sidebar img {
+    width: 50px;
+    border-radius: 50%;
+    margin: 5px 0;
+}
+
+#discord-sidebar hr {
+    width: 50%;
+    border-color: #4d4d4d;
+}
+
+#discord-server-panel {
+    width: 500px;
+    background: #2f3136;
+    border-top-left-radius: 10px;
+}
+
+/* -- server navigation -- */
+
+#server-title {
+    border-bottom: 1px solid #17181a;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 10px;
+}
+
+#server-title h1 {
+    font-size: 20px;
+}
+
+#all-channels {
+    padding: 0 10px;
+}
+
+#all-channels h2 {
+    font-size: 17px;
+}
+
+.folder-title {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+#all-channels ul {
+    list-style: none;
+    margin-block-start: 0;
+    padding-inline-start: 20px;
+    font-size: 15px;
+}
+
+#all-channels li {
+    margin-bottom: 10px;
+    display: flex;
+    align-items: center;
+}
+
+#all-channels i {
+    font-size: 20px;
+    margin-right: 10px;
+}
+
+/* -- main body -- */
+
+#discord-server {
+    display: flex;
+    flex-direction: column;
+    flex: auto;
+}
+
+/* -- top zone -- */
+#top-panel {
+    display: flex;
+    align-items: center;
+    background: #36393f;
+    justify-content: space-between;
+    padding: 0 15px;
+    border-bottom: 1px solid #17181a;
+}
+
+#top-panel input {
+    border-radius: 5px;
+    border: none;
+    color: inherit;
+    background: #202225;
+    padding: 5px;
+
+}
+
+#top-panel input:focus {
+    outline: none;
+    border: none;
+
+}
+.left-side {
+    display: flex;
+    align-items: center;
+    min-height: 50px;
+}
+
+.left-side h1 {
+    padding: 0;
+    padding-right: 13px;
+    border-right: 1px solid #e2e2e2; 
+    margin-right: 13px;
+    font-weight: bold;
+}
+
+.left-side i {
+    font-size: 1.3em;
+    margin-right: 10px;
+}
+
+
+.left-side span {
+    padding-bottom: 0.5px;
+}
+
+.right-side i {
+    font-size: 1.3em;
+    margin: 0 5px;
+}
+
+
+#channel {
+    display: flex;
+    flex: auto;
+}
+
+/* -- channel and messages -- */
+
+#channelbody {
+    display: flex;
+    flex: auto;
+    padding: 10px;
+    justify-content: space-between;
+    flex-direction: column;
+    background: #36393f;
+}
+
+#messagebody {
+    overflow-y: scroll;
+    flex: auto;
+    max-height: 82vh;
+
+}
+.message {
+    display: flex;
+    align-items: baseline;
+}
+
+.message b {
+    font-size: 1.1em;
+}
+
+.message span {
+    margin-right: 5px;
+    color: #b0b0b0;
+    min-width: 67px;
+    font-size: 0.9em;
+    margin: 0 auto;
+}
+
+#text-bar {
+    width: 95%;
+    border-radius: 10px;
+    background: #40444b;
+    height: 50px;
+    padding: 5px 10px;
+    margin: auto;
+    display: flex;
+    align-items: center;
+}
+
+#text-bar i {
+    font-size: 1.5em;
+    margin: 0 10px;
+}
+
+#text-bar input {
+    flex: auto;
+    background: none;
+    border: none;
+    color: inherit;
+    font-size: inherit;
+}
+
+/* #text-bar input::placeholder {
+    color: blue;
+    font-size: 1.5em;
+  }
+ */
+#text-bar input:focus {
+    border: none;
+    outline: none
+}
+
+/* -- member panel -- */
+
+#members {
+    width: 450px;
+    background: #2f3136;
+    padding: 20px 10px 15px 15px;
+}
+
+.role-span {
+    color: #72767d;
+    margin-bottom: 10px;
+    margin-top: 0;
+    text-transform: uppercase;
+}
+
+.member {
+    display: flex;
+    align-items: center;
+    margin-bottom: 15px;
+}
+
+.member img {
+    border-radius: 50%;
+    height: 50px;
+    width: 50px;
+    margin-right: 10px;
+}
+
+.member-info {
+    display: flex;
+    flex-direction: column;
+}
+
+.member-bot span {
+    background: #8a8af6;
+    padding: 2px 4px;
+    border-radius: 5px;
+    text-transform: uppercase;
+}
+
+.member-bot i {
+    font-size: 13px;
+}
+
+/* --- SCROLLBAR FOR DISCORD. --- */
+
+::-webkit-scrollbar {
+    width: 5px;
+    height: 5px;
+  }
+  ::-webkit-scrollbar-button {
+    width: 0px;
+    height: 0px;
+  }
+  ::-webkit-scrollbar-thumb {
+    background: #212121;
+    border: 0px none #ffffff;
+    border-radius: 32px;
+  }
+  ::-webkit-scrollbar-thumb:hover {
+    background: #ff0000;
+  }
+  ::-webkit-scrollbar-thumb:active {
+    background: #000000;
+  }
+  ::-webkit-scrollbar-track {
+    background: #666666;
+    border: 0px none #ffffff;
+    border-radius: 50px;
+    background-color: #666666;
+    background-image: none;
+  }
+  ::-webkit-scrollbar-track:hover {
+    background: #666666;
+  }
+  ::-webkit-scrollbar-track:active {
+    background: #333333;
+  }
+  ::-webkit-scrollbar-corner {
+    background: transparent;
+  }

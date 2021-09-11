@@ -116,5 +116,31 @@
         )
     }
 
+// FIREFOX
+var browserPages = document.getElementsByClassName("webpage");
+var browserTabs = document.getElementsByClassName("tab");
 
+function toggleTab(sectionname) {
+    $(browserPages).removeClass("show");
+    $(document.getElementById(sectionname)).addClass("show");
+    $(browserTabs).removeClass("active");
+    $(document.getElementById(sectionname + "tab")).addClass("active");
+}
 
+function closeTab(sectionname) {
+    $(document.getElementById(sectionname)).removeClass("show");
+    $(document.getElementById(sectionname + "tab")).addClass("hidden");
+}
+
+var browserFrame = top.document.getElementById('firefoxframe');
+var browserVideoPages = browserFrame.contentWindow.document.getElementsByClassName("webpage");
+var browserVideoTabs = browserFrame.contentWindow.document.getElementsByClassName("tab");
+
+function openTab(sectionname) {
+    //console.log("loads?", browserFrame, browserVideoPages, browserVideoTabs);
+     $(browserVideoPages).removeClass("show");
+    $(browserVideoTabs).removeClass("active");
+    $(browserFrame.contentWindow.document.getElementById(sectionname)).addClass("show");
+    $(browserFrame.contentWindow.document.getElementById(sectionname + "tab")).removeClass("hidden");
+    $(browserFrame.contentWindow.document.getElementById(sectionname + "tab")).addClass("active");
+}

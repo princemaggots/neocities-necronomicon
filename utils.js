@@ -363,6 +363,21 @@ function popUpWindow() {
     win.document.write('<iframe width="560" height="315" src="https://neocities.org" frameborder="0" allowfullscreen></iframe>')
 }
 
+// CUT IN 
+var audio = new Audio('apps/file-explorer/music/cut-in-sound.mp3');
+const cutIn = async() => {
+    $(document.getElementById("cut-in")).addClass("show");
+    audio.play();
+    setTimeout(function () {
+        window.location.href = "index.html";
+    }, 3000);
+    
+}
+
+function cutInFunction() {
+    cutIn();
+}
+
 
          
         

@@ -73,7 +73,7 @@
       </div>
       
       <div class="login">
-      <a href="desk.html"> 
+      <a id="link" href="desk.html"> 
       <button>Log In</button> 
       </a> 
       <audio id="logon" src="https://www.dropbox.com/s/io18jwu3fkuxs7o/Windows%20XP%20Logon%20Sound.mp3?dl=0"> </audio>
@@ -81,4 +81,10 @@
       
   </div>
   </body>
+  <script>
+    const touch = matchMedia('(hover: none)').matches;   
+    if (touch) {
+      $("a").attr("href","mobile.html");
+    }
+  </script>
 </html>

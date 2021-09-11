@@ -8,14 +8,118 @@
          If you include the next line in all your web pages, they will all share the same look.
          This makes it easier to make new pages for your site. -->
     <link href="../style.css" rel="stylesheet" type="text/css" >
+    <link href="apps.css" rel="stylesheet" type="text/css" >
     <script src="https://kit.fontawesome.com/75964e879a.js" crossorigin="anonymous"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/bodymovin/5.7.8/lottie.min.js" integrity="sha512-w58XJ/0dVbEfZVJoJyBUOTMGBWmIW4jEYJSA0898d2L0Ghpum0FvwK7qTuHhkTctApzrchv3Neli+28ajI4+fg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-
+    <script>
+      $(function(){
+    $("#messagebody").load("discord-messages.html"); 
+    });
+    </script>
   </head>
+  <style>
+  </style>
   <body>
-    
-    <p> omg hiiii </p>
+    <div id="discord">
+      <div id="discord-sidebar">
+        <img src="https://via.placeholder.com/50">
+        <hr>
+        <img src="https://via.placeholder.com/50">
+        <img src="https://via.placeholder.com/50">
+      </div>
+      <div id="discord-server-panel"> 
+        <div id="server-title">
+          <h1> server title</h1>
+          <i class="fas fa-chevron-down"></i>
+        </div>
+        <div id="all-channels">
+          <div class="folder-title">
+            <h2> folder title </h2>
+            <i class="fas fa-plus"></i>
+          </div>
+          
+          <ul>
+            <li>
+              <i class="fas fa-hashtag"></i> channel
+            </li>
+            <li>
+              <i class="fas fa-hashtag"></i> channel
+            </li>
+          </ul>
+        </div>
+      </div>
+      <div id="discord-server">
+        <div id="top-panel">
+          <div class="left-side">
+            <i class="fas fa-hashtag"></i>  <h1>channel title</h1>
+          <span> description</span>
+          </div>
+          <div class="right-side">
+            <i class="fas fa-bell"></i>
+            <span class="fa-rotate-by" style="display: inline-block; transform: rotate(45deg);">
+              <i class="fas fa-thumbtack"></i>
+            </span>
+            <i class="fas fa-user-friends"></i>
+            <input type="text" placeholder="Search...">
+            <i class="fas fa-inbox"></i>
+            <i class="fas fa-question-circle"></i>
+          </div>
+        </div>
+        <div id="channel">
+          <div id="channelbody">
+            <div id="messagebody">
+
+            </div>
+            <div id="text-bar">
+              <i class="fas fa-plus-circle"></i>
+              <input type="text" placeholder="Message #channel">
+              <i class="fas fa-gift"></i>
+              <i class="fas fa-sticky-note"></i>
+              <i class="fas fa-dizzy"></i>
+            </div>
+          </div>
+          <div id="members">
+
+            <div class="role">
+              <p class="role-span"> role 1 - 1</p>
+              <div class="member">
+                <img src="https://via.placeholder.com/50">
+                <div class="member-info">
+                  <b> name </b>
+                  <span> status message</span>
+                </div>
+              </div>
+            </div>
+
+            <div class="role">
+              <p class="role-span"> bot role - 1</p>
+              <div class="member">
+                <img src="https://via.placeholder.com/50">
+                <div class="member-info">
+                  <div class="member-bot"> 
+                    <b> name </b> <span> <i class="fas fa-check"></i> bot </span>
+                  </div>
+                  <span> status message</span>
+                </div>
+              </div>
+            </div>
+
+            <div class="role">
+              <p class="role-span"> offline - 1</p>
+              <div class="member">
+                <img src="https://via.placeholder.com/50">
+                <div class="member-info">
+                    <b> name </b>  
+                  <span> status message</span>
+                </div>
+              </div>
+            </div>
+
+          </div>
+        </div>
+      </div>
+    </div>
   <!-------JAVASCRIPT FUNCTIONS ------->
   <script src="../utils.js"></script>
 
