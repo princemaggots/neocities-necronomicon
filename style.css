@@ -930,6 +930,99 @@ i.line {
 
 
 /* --- MEDIA FOR MOBILE --- */
+
+@media screen and (max-width: 1000px) {
+  #start {
+    width: 85vw;
+    height: 40vw;
+    }
+  
+  .userbox {
+    width: 85vw;
+  }
+  
+  #username {
+    width: 80vw;
+    /* height: 3vw; */
+  }
+  
+  
+  #password {
+    width: 80vw;
+  }
+  
+  .login {
+    width: 85vw;
+  }
+  
+  .login button {
+    width: 15vw;
+    height: 10vw;
+  }
+  
+}
+
+@media screen and (max-width: 500px) {
+  #start {
+    width: 85vw;
+    height: 55vw;
+    }
+  
+  .userbox {
+    width: 85vw;
+  }
+  
+  #username {
+    width: 75vw;
+    /* height: 3vw; */
+  }
+  
+  
+  #password {
+    width: 75vw;
+  }
+  
+  .login {
+    width: 85vw;
+  }
+  
+  .login button {
+    width: 25vw;
+    height: 10vw;
+  }
+
+}
+
+@media screen and (max-width: 350px) {
+  #start {
+    width: 85vw;
+    height: 75vw;
+    }
+  
+  .userbox {
+    width: 85vw;
+  }
+  
+  #username {
+    width: 75vw;
+    /* height: 3vw; */
+  }
+  
+  
+  #password {
+    width: 75vw;
+  }
+  
+  .login {
+    width: 85vw;
+  }
+  
+  .login button {
+    width: 25vw;
+    height: 15vw;
+  }
+
+}
 @media screen and (orientation: landscape) {
 
     .mobile-taskbar .taskbar-icon {

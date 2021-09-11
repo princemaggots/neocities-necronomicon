@@ -84,7 +84,8 @@
   <script>
     const touch = matchMedia('(hover: none)').matches;   
     if (touch) {
-      $("a").attr("href","mobile.html");
+      console.log("barks")
+      document.getElementById('link').setAttribute("href", "mobile.html");;
     }
   </script>
 </html>
