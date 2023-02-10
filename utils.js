@@ -291,6 +291,7 @@
 
     function showMultiApp(multiapp) {        
         top.document.getElementById(multiapp).classList.toggle("show");
+        top.document.getElementById(multiapp).classList.toggle("front");
         showMultiIcon(multiapp);
     }
 
@@ -377,6 +378,15 @@ const cutIn = async() => {
 function cutInFunction() {
     cutIn();
 }
+
+//MUSIC CHANGE
+function changeTune(audioSrc) {
+    audioSrc = audioSrc.replace("https:/", "https://");
+    console.log(audioSrc);
+    var player = top.document.getElementById("playerAudio");
+    player.setAttribute("src", audioSrc);
+}
+
 
 
          

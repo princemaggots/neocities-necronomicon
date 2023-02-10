@@ -438,7 +438,7 @@ iframe {
 }
 
 .front {
-  z-index: 200!important;
+  z-index: 300!important;
 }
 
 .hidden {
@@ -466,7 +466,7 @@ iframe {
   left: 4vw;
 }
 
-#fileexp {
+#fileExp {
   top: 5vw;
   left: 5vw;
 }
@@ -484,6 +484,15 @@ iframe {
 #welcometxt {
   left: 1vw;
   top: 1vw;
+}
+
+#abtmetxt {
+  top: 7vw;
+  left: 7vw;
+}
+#kintxt {
+  top: 7vw;
+  left: 7vw;
 }
 /* --- SOUND STYLING --- */
 #audio-player-container {
@@ -851,6 +860,10 @@ i.line {
 .active {
   background: var(--themeColor75);
   color: var(--backgroundColor);
+}
+
+section#mtf {
+  margin-top: 20px;
 }
 
 /* --- MOBILE DESKTOP --- */
